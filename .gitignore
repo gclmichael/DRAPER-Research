@@ -1,0 +1,35 @@
+# ---- 数据与产物（体积大 / 可重建）----
+data/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+
+# ---- iNode 排查过程（与本研究无关，且含第三方二进制）----
+inode/
+hostrun/
+state/
+
+# ---- 【敏感】导师的 idea 与未发表材料：绝不公开 ----
+# draper_typeset/ 是导师论文的排版工程，含方案原文
+draper_typeset/
+README.internal.md
+idea和研究背景/
+PAPER_REVIEW.md
+RESULTS.md
+RESULTS_SEED42.md
+REAL_HARDWARE_PGO.md
+DATASET.md
+
+# ---- 【版权】第三方论文 PDF：不可再分发 ----
+Reference/
+
+# ---- 编辑器/系统 ----
+.vscode/
+.idea/
+*.swp
+.DS_Store
+README.internal.md
