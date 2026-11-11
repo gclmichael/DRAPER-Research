@@ -1,0 +1,173 @@
+{
+  "suite": "LLVM 多源程序：早期计数对照",
+  "programs": [
+    {
+      "suite": "LLVM 多源程序：早期计数对照",
+      "program": "automotive-bitcount",
+      "split": "development",
+      "collected": true,
+      "algorithm_complete": true,
+      "timing_complete": true,
+      "speedup_percent": -6.454636528437464,
+      "ci95_percent": [
+        -7.803348014397699,
+        -5.633343118364902
+      ],
+      "significantly_slower": true,
+      "significantly_slower_over_one_percent": true,
+      "projection_vs_calibrated": {
+        "speedup_percent": -0.3826843079786742,
+        "ci95_percent": [
+          -1.3404334468640327,
+          0.5089574872193473
+        ]
+      },
+      "profi_count_error": 0.01106214497680987,
+      "final_count_error": 0.010912950452789857,
+      "count_improved_but_significantly_slower": true,
+      "count_improved_but_slower_over_one_percent": true,
+      "projection_accepted": false,
+      "final_strategy": "center"
+    },
+    {
+      "suite": "LLVM 多源程序：早期计数对照",
+      "program": "lambda",
+      "split": "test",
+      "collected": true,
+      "algorithm_complete": true,
+      "timing_complete": true,
+      "speedup_percent": -2.5715984631417275,
+      "ci95_percent": [
+        -2.9997904012621963,
+        -2.105728852894122
+      ],
+      "significantly_slower": true,
+      "significantly_slower_over_one_percent": true,
+      "projection_vs_calibrated": {
+        "speedup_percent": 0.23482132533294786,
+        "ci95_percent": [
+          -0.12424954675157364,
+          0.5912744655611564
+        ]
+      },
+      "profi_count_error": 0.050142105413852917,
+      "final_count_error": 0.050012129103092266,
+      "count_improved_but_significantly_slower": true,
+      "count_improved_but_slower_over_one_percent": true,
+      "projection_accepted": true,
+      "final_strategy": "proposed"
+    },
+    {
+      "suite": "LLVM 多源程序：早期计数对照",
+      "program": "minisat",
+      "split": "test",
+      "collected": true,
+      "algorithm_complete": true,
+      "timing_complete": true,
+      "speedup_percent": -2.4710554177682242,
+      "ci95_percent": [
+        -2.975529505248838,
+        -1.9503816083590217
+      ],
+      "significantly_slower": true,
+      "significantly_slower_over_one_percent": true,
+      "projection_vs_calibrated": {
+        "speedup_percent": -0.5661294296630118,
+        "ci95_percent": [
+          -1.1304947308289062,
+          -0.06393911975587072
+        ]
+      },
+      "profi_count_error": 0.0494912876469576,
+      "final_count_error": 0.04943776244863122,
+      "count_improved_but_significantly_slower": true,
+      "count_improved_but_slower_over_one_percent": true,
+      "projection_accepted": false,
+      "final_strategy": "center"
+    },
+    {
+      "suite": "LLVM 多源程序：早期计数对照",
+      "program": "aha",
+      "split": "validation",
+      "collected": true,
+      "algorithm_complete": true,
+      "timing_complete": true,
+      "speedup_percent": -1.0982162466224594,
+      "ci95_percent": [
+        -2.5104464427397435,
+        -0.15096645141969542
+      ],
+      "significantly_slower": true,
+      "significantly_slower_over_one_percent": true,
+      "projection_vs_calibrated": {
+        "speedup_percent": -0.09647398249129514,
+        "ci95_percent": [
+          -1.6145764191132312,
+          1.5071173603520847
+        ]
+      },
+      "profi_count_error": 0.00742696742431704,
+      "final_count_error": 0.00724805686300778,
+      "count_improved_but_significantly_slower": true,
+      "count_improved_but_slower_over_one_percent": true,
+      "projection_accepted": false,
+      "final_strategy": "center"
+    },
+    {
+      "suite": "LLVM 多源程序：早期计数对照",
+      "program": "kc",
+      "split": "validation",
+      "collected": true,
+      "algorithm_complete": true,
+      "timing_complete": true,
+      "speedup_percent": -0.57444149985061,
+      "ci95_percent": [
+        -1.4776937365104033,
+        -0.08240634840522518
+      ],
+      "significantly_slower": true,
+      "significantly_slower_over_one_percent": false,
+      "projection_vs_calibrated": {
+        "speedup_percent": -0.1949977301110258,
+        "ci95_percent": [
+          -1.32295379496779,
+          0.6728474882348184
+        ]
+      },
+      "profi_count_error": 0.0773034450120179,
+      "final_count_error": 0.069791070364662,
+      "count_improved_but_significantly_slower": true,
+      "count_improved_but_slower_over_one_percent": false,
+      "projection_accepted": false,
+      "final_strategy": "center"
+    },
+    {
+      "suite": "LLVM 多源程序：早期计数对照",
+      "program": "Obsequi",
+      "split": "development",
+      "collected": true,
+      "algorithm_complete": true,
+      "timing_complete": true,
+      "speedup_percent": -0.4544640171388956,
+      "ci95_percent": [
+        -0.7227953033585763,
+        -0.21643619412859563
+      ],
+      "significantly_slower": true,
+      "significantly_slower_over_one_percent": false,
+      "projection_vs_calibrated": {
+        "speedup_percent": 0.4919214061455347,
+        "ci95_percent": [
+          0.28632389755988724,
+          0.6832640898755851
+        ]
+      },
+      "profi_count_error": 0.037083750778065694,
+      "final_count_error": 0.03643062563522538,
+      "count_improved_but_significantly_slower": true,
+      "count_improved_but_slower_over_one_percent": false,
+      "projection_accepted": true,
+      "final_strategy": "proposed"
+    }
+  ]
+}

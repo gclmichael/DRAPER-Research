@@ -1,0 +1,37 @@
+{
+  "programs": [
+    {
+      "program": "ffmpeg",
+      "profi_count_error": 0.016462896085881275,
+      "final_count_error": 0.0017970164616943312,
+      "timing_vs_profi": {
+        "speedup_percent": -3.626167665270488,
+        "ci95_percent": [
+          -4.25744543966905,
+          -2.6126203025278123
+        ]
+      },
+      "count_improved_but_significantly_slower": true,
+      "final_change": 1911.0855409134022,
+      "budget": 21079389.276244897,
+      "final_flow_audit": {
+        "cfg_max_absolute_residual": 1.993569642081468,
+        "call_max_absolute_residual": 1.993569642081468,
+        "minimum_count": 0.0
+      },
+      "maximum_measured_anchor_absolute_error": 0.0,
+      "projection_accepted": true,
+      "calibrated_interval_coverage": {
+        "coverage": 0.9566115439048335,
+        "positive_coverage": 0.7705559368565545,
+        "mean_width": null,
+        "count": 78431,
+        "unbounded_fraction": 0.01271181038109931,
+        "finite_coverage": 0.9560916393315598
+      }
+    }
+  ],
+  "counterexamples": [
+    "ffmpeg"
+  ]
+}

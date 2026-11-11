@@ -1,0 +1,200 @@
+{
+  "status": "complete",
+  "seed": 42,
+  "budget_fraction": 0.01,
+  "programs": [
+    {
+      "program": "spiff",
+      "projection": {
+        "cfg_max_absolute_residual": 0.7349597435926186,
+        "call_max_absolute_residual": 1.1490681122500135,
+        "minimum_count": 0.0,
+        "changed": true,
+        "absolute_change": 3413.0874425942284,
+        "budget": 13323056.225523071,
+        "decisions": 538,
+        "active_edges": 1719,
+        "expected_loss_before": 495270.1599915631,
+        "expected_loss_candidate": 490937.23916906316,
+        "expected_loss_after": 490937.23916906316,
+        "cost_model": "static instruction/frequency proxy"
+      },
+      "compiler_replay_accepted": false,
+      "compiler_expected_loss_before": 494945.90024572785,
+      "compiler_expected_loss_proposed": 490932.62877608824,
+      "compiler_replay": {
+        "accepted": false,
+        "expected_loss_before": 494945.90024572785,
+        "expected_loss_proposed": 490932.62877608824,
+        "stable_decisions": 1739,
+        "changed_or_missing_stable_decisions": [
+          [
+            "branch",
+            "594"
+          ],
+          [
+            "branch",
+            "1639"
+          ],
+          [
+            "block-frequency",
+            "main:1"
+          ],
+          [
+            "block-frequency",
+            "main:2"
+          ],
+          [
+            "block-frequency",
+            "main:3"
+          ],
+          [
+            "block-frequency",
+            "main:4"
+          ],
+          [
+            "block-frequency",
+            "main:5"
+          ],
+          [
+            "block-frequency",
+            "main:6"
+          ],
+          [
+            "block-frequency",
+            "main:7"
+          ],
+          [
+            "block-frequency",
+            "main:8"
+          ],
+          [
+            "block-frequency",
+            "main:9"
+          ],
+          [
+            "block-frequency",
+            "_Y_doargs:1"
+          ],
+          [
+            "block-frequency",
+            "_Y_doargs:2"
+          ],
+          [
+            "block-frequency",
+            "_Y_doargs:3"
+          ],
+          [
+            "block-frequency",
+            "_Y_doargs:4"
+          ],
+          [
+            "block-frequency",
+            "_Y_doargs:5"
+          ],
+          [
+            "block-frequency",
+            "_Y_doargs:45"
+          ],
+          [
+            "block-frequency",
+            "_Y_doargs:46"
+          ],
+          [
+            "block-frequency",
+            "_Y_doargs:53"
+          ],
+          [
+            "block-frequency",
+            "_Y_doargs:55"
+          ]
+        ]
+      },
+      "final_absolute_change": 0.0,
+      "risk_decisions_by_kind": {
+        "branch": 331,
+        "block-frequency": 203,
+        "inline": 2,
+        "successor-order": 2
+      },
+      "base_decisions_by_kind": {
+        "branch": 938,
+        "block-frequency": 1471,
+        "inline": 184,
+        "successor-order": 82
+      },
+      "calibrated": {
+        "cfg_max_absolute_residual": 0.005293893860653043,
+        "call_max_absolute_residual": 0.002346433699131012,
+        "minimum_count": 0.0,
+        "block_relative_l1": 0.002871690925674374,
+        "edge_relative_l1": 0.004458639866943185,
+        "block_overlap": 0.9985644116872487,
+        "edge_overlap": 0.9977741795562561,
+        "positive_block_coverage": 0.8879551820728291,
+        "branch_probability_mae": 0.16018476761396622,
+        "hot_predicate_flips": 76,
+        "evaluated_branch_edges": 537
+      },
+      "risk_projected": {
+        "cfg_max_absolute_residual": 0.005293893860653043,
+        "call_max_absolute_residual": 0.002346433699131012,
+        "minimum_count": 0.0,
+        "block_relative_l1": 0.002871690925674374,
+        "edge_relative_l1": 0.004458639866943185,
+        "block_overlap": 0.9985644116872487,
+        "edge_overlap": 0.9977741795562561,
+        "positive_block_coverage": 0.8879551820728291,
+        "branch_probability_mae": 0.16018476761396622,
+        "hot_predicate_flips": 76,
+        "evaluated_branch_edges": 537
+      },
+      "next_calibration": {
+        "blocks": [
+          477,
+          1281,
+          1307
+        ],
+        "estimated_dynamic_updates": 434.4264194825514,
+        "dynamic_budget": 11833362.93956007,
+        "per_function": 2,
+        "per_loop": 1,
+        "cost_basis": "point count"
+      },
+      "executed_calibration": {
+        "blocks": [
+          1281,
+          586,
+          1316
+        ],
+        "estimated_dynamic_updates": 689.7063548830785,
+        "dynamic_budget": 11833362.812722376,
+        "per_function": 2,
+        "per_loop": 1,
+        "cost_basis": "upper bootstrap count",
+        "fit": {
+          "cfg_max_absolute_residual": 0.005293893860653043,
+          "call_max_absolute_residual": 0.002346433699131012,
+          "minimum_count": 0.0,
+          "iterations": 3334,
+          "projection_l1_normalized": 1.5302282248587658e-05,
+          "regularization": 1e-06,
+          "anchors": 3
+        },
+        "measured_dynamic_updates": 472,
+        "measured_exceeds_estimated_budget": false
+      },
+      "execution": {
+        "arguments": [
+          "Sample.3",
+          "Sample.4"
+        ],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/large-flow-v2/spiff/workload",
+        "reference": "/data/chaoni/chengli/draper-node3/data/large-flow-v2/spiff/workload/spiff.reference_output",
+        "verifier": "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+        "expected_exit": 1,
+        "append_exit": true
+      }
+    }
+  ]
+}

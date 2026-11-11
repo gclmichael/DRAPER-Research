@@ -1,0 +1,35 @@
+{
+  "programs": [
+    {
+      "program": "zstd",
+      "profi_count_error": 0.699462551332847,
+      "final_count_error": 0.5267419113099597,
+      "timing_vs_profi": {
+        "speedup_percent": -0.31332264974596963,
+        "ci95_percent": [
+          -1.4211582996291283,
+          0.4111003713014609
+        ]
+      },
+      "count_improved_but_significantly_slower": false,
+      "final_change": 0.0,
+      "budget": 2578343.361820856,
+      "final_flow_audit": {
+        "cfg_max_absolute_residual": 1.1641532182693481e-10,
+        "call_max_absolute_residual": 3.725290298461914e-09,
+        "minimum_count": 0.0
+      },
+      "maximum_measured_anchor_absolute_error": 0.0,
+      "projection_accepted": false,
+      "calibrated_interval_coverage": {
+        "coverage": 0.9570064881795809,
+        "positive_coverage": 0.6755833807626637,
+        "mean_width": null,
+        "count": 26818,
+        "unbounded_fraction": 0.012640763666194347,
+        "finite_coverage": 0.956456059518864
+      }
+    }
+  ],
+  "counterexamples": []
+}

@@ -1,0 +1,178 @@
+[
+ {
+  "id": "B001",
+  "lang": "text",
+  "open_line": 19,
+  "close_line": 21,
+  "text": "还原 counts 越接近真实执行 counts，PGO 效果越好。",
+  "hint": "QUOTE?"
+ },
+ {
+  "id": "B002",
+  "lang": "text",
+  "open_line": 37,
+  "close_line": 45,
+  "text": "传统目标:\n    minimize || inferred counts - true counts ||\n\nDRAPER 目标:\n    minimize expected decision loss\n      = sum over PGO predicates of\n            cost(flip predicate) * probability(flip predicate)",
+  "hint": "LIST?"
+ },
+ {
+  "id": "B003",
+  "lang": "text",
+  "open_line": 99,
+  "close_line": 119,
+  "text": "IR:\n    caller\n      cs1 -> callee\n    callee:\n      B1\n      B2\n      B3\n      loop:\n        L_body\n\nbinary:\n    caller:\n      inlined.B1\n      inlined.B2\n      inlined.B3\n      unroll.body.1\n      unroll.body.2\n      unroll.body.3\n      unroll.body.4",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B004",
+  "lang": "text",
+  "open_line": 125,
+  "close_line": 131,
+  "text": "inlined.B1          <- identity/inline(B1)\ninlined.B2          <- identity/inline(B2)\ninlined.B3          <- identity/inline(B3)\nunroll.body.k       <- clone(L_body, k=1,2,3,4)\ncaller.cs1.entry    <- inline(callee.entry, cs1)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B005",
+  "lang": "text",
+  "open_line": 139,
+  "close_line": 147,
+  "text": "inlined.B1          : 80 samples\ninlined.B2          : 40 samples\ninlined.B3          : 20 samples\nunroll.body.1       : 25 samples\nunroll.body.2       : 30 samples\nunroll.body.3       : 20 samples\nunroll.body.4       : 25 samples",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B006",
+  "lang": "text",
+  "open_line": 151,
+  "close_line": 155,
+  "text": "采样率 q    = 1/1000\n噪声 sigma  = sqrt(sample + 1)\nunroll 覆盖 = 高",
+  "hint": "LIST?"
+ },
+ {
+  "id": "B007",
+  "lang": "text",
+  "open_line": 159,
+  "close_line": 164,
+  "text": "B1      = 80000\nB2      = 40000\nB3      = 20000\nL_body  = 100000",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B008",
+  "lang": "text",
+  "open_line": 172,
+  "close_line": 174,
+  "text": "25 + 30 + 20 + 25 = 100",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B009",
+  "lang": "text",
+  "open_line": 178,
+  "close_line": 180,
+  "text": "alpha_1 = alpha_2 = alpha_3 = alpha_4 = 0.25",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B010",
+  "lang": "text",
+  "open_line": 184,
+  "close_line": 187,
+  "text": "expected(unroll.body.k)\n  = q * alpha_k * L_body",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B011",
+  "lang": "text",
+  "open_line": 191,
+  "close_line": 193,
+  "text": "100 samples / q = 100000",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B012",
+  "lang": "text",
+  "open_line": 197,
+  "close_line": 199,
+  "text": "4 * alpha * L_body = 100000",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B013",
+  "lang": "text",
+  "open_line": 203,
+  "close_line": 205,
+  "text": "L_body = 100000",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B014",
+  "lang": "text",
+  "open_line": 209,
+  "close_line": 212,
+  "text": "sum(incoming L_body) == sum(outgoing L_body)\ncallee entry == sum(caller edge cs1)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B015",
+  "lang": "text",
+  "open_line": 220,
+  "close_line": 222,
+  "text": "inline benefit / cost > threshold",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B016",
+  "lang": "text",
+  "open_line": 226,
+  "close_line": 230,
+  "text": "callsite count = 80000\nmargin = benefit/cost - threshold = 0.12\n标准差   = 0.11",
+  "hint": "LIST?"
+ },
+ {
+  "id": "B017",
+  "lang": "text",
+  "open_line": 236,
+  "close_line": 238,
+  "text": "count(inlined.B3) / count(inlined.B2) > 0.8",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B018",
+  "lang": "text",
+  "open_line": 242,
+  "close_line": 245,
+  "text": "B3/B2 = 0.5\n置信区间 [0.35, 0.68]",
+  "hint": "LIST?"
+ },
+ {
+  "id": "B019",
+  "lang": "text",
+  "open_line": 253,
+  "close_line": 260,
+  "text": "尽量保持原 counts\n+ 尽量把 margin 推到安全侧\nsubject to:\n    caller/callee 流守恒\n    counts 非负\n    ||修正量||_1 <= budget",
+  "hint": "LIST?"
+ },
+ {
+  "id": "B020",
+  "lang": "text",
+  "open_line": 264,
+  "close_line": 267,
+  "text": "decision_tag = risky-inline\npolicy       = conservative threshold",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B021",
+  "lang": "text",
+  "open_line": 271,
+  "close_line": 273,
+  "text": "B3 = 20000",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B022",
+  "lang": "yaml",
+  "open_line": 277,
+  "close_line": 291,
+  "text": "entity: callee.B3\ncount: 20000\ninterval: [15800, 24700]\nmapping: inlined-from-callee.B3\ndecision_tags:\n  layout: stable-cold\n\nentity: caller.cs1\ncount: 80000\ninterval: [71000, 89000]\ndecision_tags:\n  inline: risky-hot\n  policy: conservative",
+  "hint": "CODE_KEEP"
+ }
+]

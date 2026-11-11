@@ -1,0 +1,247 @@
+{
+  "program": "ffmpeg",
+  "method": "upstream arguments and files, fresh process per execution, wall time including launch",
+  "repetitions_per_batch": 1,
+  "seconds_per_execution": {
+    "baseline": [
+      2.4896826948970556,
+      2.4282905999571085,
+      2.404717344790697,
+      2.45679416321218,
+      2.4778991155326366,
+      2.461800055578351,
+      2.425412265583873,
+      2.47951627522707,
+      2.475218914449215,
+      2.4393327925354242,
+      2.4852223191410303,
+      2.456958530470729,
+      2.297462087124586,
+      2.4514566101133823,
+      2.475538671016693
+    ],
+    "profi": [
+      2.044300764799118,
+      2.0429989211261272,
+      2.069964351132512,
+      2.039426878094673,
+      2.1722377203404903,
+      2.045046018436551,
+      2.050481330603361,
+      2.0419863797724247,
+      2.044080886989832,
+      2.0532617084681988,
+      2.0509919710457325,
+      2.0634522940963507,
+      2.0478611551225185,
+      2.0412386171519756,
+      2.0537379514425993
+    ],
+    "calibrated": [
+      2.0589677561074495,
+      2.0608682613819838,
+      2.0690747182816267,
+      2.056668072938919,
+      2.0683685429394245,
+      2.0847951602190733,
+      2.085000431165099,
+      2.0660100746899843,
+      2.0699443574994802,
+      2.084555136039853,
+      2.0648561157286167,
+      2.0742758456617594,
+      2.0844149589538574,
+      2.071633806452155,
+      2.0630699638277292
+    ],
+    "risk-projected": [
+      2.1421238500624895,
+      2.117305438965559,
+      2.122638773173094,
+      2.1177194472402334,
+      2.126351796090603,
+      2.129276167601347,
+      2.137192215770483,
+      2.122893599793315,
+      2.1310733146965504,
+      2.15981881134212,
+      2.1519640032202005,
+      2.1632557157427073,
+      2.144294533878565,
+      2.1194261722266674,
+      2.133945621550083
+    ]
+  },
+  "round_order": [
+    [
+      "calibrated",
+      "profi",
+      "risk-projected",
+      "baseline"
+    ],
+    [
+      "risk-projected",
+      "calibrated",
+      "baseline",
+      "profi"
+    ],
+    [
+      "profi",
+      "risk-projected",
+      "calibrated",
+      "baseline"
+    ],
+    [
+      "profi",
+      "calibrated",
+      "baseline",
+      "risk-projected"
+    ],
+    [
+      "profi",
+      "calibrated",
+      "risk-projected",
+      "baseline"
+    ],
+    [
+      "profi",
+      "risk-projected",
+      "calibrated",
+      "baseline"
+    ],
+    [
+      "calibrated",
+      "profi",
+      "baseline",
+      "risk-projected"
+    ],
+    [
+      "profi",
+      "risk-projected",
+      "baseline",
+      "calibrated"
+    ],
+    [
+      "baseline",
+      "calibrated",
+      "profi",
+      "risk-projected"
+    ],
+    [
+      "calibrated",
+      "risk-projected",
+      "baseline",
+      "profi"
+    ],
+    [
+      "calibrated",
+      "profi",
+      "risk-projected",
+      "baseline"
+    ],
+    [
+      "risk-projected",
+      "calibrated",
+      "profi",
+      "baseline"
+    ],
+    [
+      "risk-projected",
+      "profi",
+      "baseline",
+      "calibrated"
+    ],
+    [
+      "calibrated",
+      "risk-projected",
+      "profi",
+      "baseline"
+    ],
+    [
+      "baseline",
+      "profi",
+      "risk-projected",
+      "calibrated"
+    ]
+  ],
+  "comparisons": {
+    "baseline": {
+      "vs_baseline": {
+        "speedup_percent": 0.0,
+        "ci95_percent": [
+          0.0,
+          0.0
+        ]
+      },
+      "vs_profi": {
+        "speedup_percent": -15.916177474621799,
+        "ci95_percent": [
+          -16.833040428085404,
+          -14.854942883832328
+        ]
+      }
+    },
+    "profi": {
+      "vs_baseline": {
+        "speedup_percent": 18.928941378489274,
+        "ci95_percent": [
+          17.446629771549723,
+          20.240057487649114
+        ]
+      },
+      "vs_profi": {
+        "speedup_percent": 0.0,
+        "ci95_percent": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "calibrated": {
+      "vs_baseline": {
+        "speedup_percent": 18.145302384934283,
+        "ci95_percent": [
+          16.651805600164195,
+          19.310376208428654
+        ]
+      },
+      "vs_profi": {
+        "speedup_percent": -0.6589136205804359,
+        "ci95_percent": [
+          -1.250432230339896,
+          0.2963692806067541
+        ]
+      }
+    },
+    "risk-projected": {
+      "vs_baseline": {
+        "speedup_percent": 14.616378561574,
+        "ci95_percent": [
+          13.250013196047847,
+          15.670059871830539
+        ]
+      },
+      "vs_profi": {
+        "speedup_percent": -3.626167665270488,
+        "ci95_percent": [
+          -4.25744543966905,
+          -2.6126203025278123
+        ]
+      }
+    }
+  },
+  "reused_binaries": null,
+  "measured_representative": {
+    "baseline": "baseline",
+    "profi": "profi",
+    "calibrated": "calibrated",
+    "risk-projected": "risk-projected"
+  },
+  "independent_evaluation_input": true,
+  "binary_bytes": {
+    "baseline": 9357056,
+    "profi": 9537728,
+    "calibrated": 9527640,
+    "risk-projected": 9528896
+  }
+}

@@ -1,0 +1,14 @@
+data/*
+!data/public-results-v1/
+!data/public-results-v1/**
+!data/public-corpus-v1/
+!data/public-corpus-v1/index.json
+state/
+tmp/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.log
+*.tmp
+*.bak
+.DS_Store

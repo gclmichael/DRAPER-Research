@@ -1,0 +1,30 @@
+{
+  "status": "finished",
+  "total": 3,
+  "programs": [
+    {
+      "program": "sqlite-modern",
+      "status": "complete",
+      "split": "development",
+      "source_lines": 311070,
+      "seconds": 16427.581802861765,
+      "observation_model": "optimized probe ratios and mapping candidates"
+    },
+    {
+      "program": "zstd",
+      "status": "complete",
+      "split": "test",
+      "source_lines": 43441,
+      "seconds": 2709.4741600397974,
+      "observation_model": "optimized probe ratios and mapping candidates"
+    },
+    {
+      "program": "ffmpeg",
+      "status": "complete",
+      "split": "test",
+      "source_lines": 136356,
+      "observation_model": "optimized probe ratios and mapping candidates",
+      "seconds": 18816.53277328238
+    }
+  ]
+}

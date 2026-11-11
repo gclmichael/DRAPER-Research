@@ -1,0 +1,4390 @@
+{
+  "status": "complete",
+  "workloads": 80,
+  "application_workloads": 49,
+  "application_families": 43,
+  "loop_kernels": 31,
+  "splits": {
+    "development": 52,
+    "validation": 12,
+    "test": 16
+  },
+  "independent_evaluation_inputs": 3,
+  "observation_kind": "Simulated sparse observations derived from measured LLVM full-block counts; optimized-probe experiments reported separately",
+  "programs": [
+    {
+      "program": "network-dijkstra",
+      "suite": "LLVM MultiSource",
+      "family": "MultiSource/Benchmarks/MiBench/network-dijkstra",
+      "kind": "application",
+      "split": "development",
+      "source_lines": 175,
+      "functions": 6,
+      "blocks": 52,
+      "edges": 74,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [
+          "input.dat"
+        ],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/network-dijkstra/network-dijkstra/network-dijkstra",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/all-flows-v2/network-dijkstra/network-dijkstra/network-dijkstra/network-dijkstra.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/network-dijkstra/network-dijkstra/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/network-dijkstra/network-dijkstra/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/network-dijkstra/network-dijkstra/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/network-dijkstra/network-dijkstra/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/network-dijkstra/network-dijkstra/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/network-dijkstra/network-dijkstra/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/network-dijkstra",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/summary.json",
+      "historical_performance_viewed": true,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "telecomm-CRC32",
+      "suite": "LLVM MultiSource",
+      "family": "MultiSource/Benchmarks/MiBench/telecomm-CRC32",
+      "kind": "application",
+      "split": "validation",
+      "source_lines": 192,
+      "functions": 5,
+      "blocks": 20,
+      "edges": 30,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [
+          "large.pcm"
+        ],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/telecomm-CRC32/telecomm-CRC32/telecomm-CRC32",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/all-flows-v2/telecomm-CRC32/telecomm-CRC32/telecomm-CRC32/telecomm-CRC32.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/telecomm-CRC32/telecomm-CRC32/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/telecomm-CRC32/telecomm-CRC32/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/telecomm-CRC32/telecomm-CRC32/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/telecomm-CRC32/telecomm-CRC32/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/telecomm-CRC32/telecomm-CRC32/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/telecomm-CRC32/telecomm-CRC32/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/telecomm-CRC32",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/summary.json",
+      "historical_performance_viewed": true,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "security-sha",
+      "suite": "LLVM MultiSource",
+      "family": "MultiSource/Benchmarks/MiBench/security-sha",
+      "kind": "application",
+      "split": "test",
+      "source_lines": 246,
+      "functions": 8,
+      "blocks": 50,
+      "edges": 72,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [
+          "input_large.asc"
+        ],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/security-sha/security-sha/security-sha",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/all-flows-v2/security-sha/security-sha/security-sha/security-sha.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/security-sha/security-sha/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/security-sha/security-sha/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/security-sha/security-sha/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/security-sha/security-sha/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/security-sha/security-sha/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/security-sha/security-sha/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/security-sha",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/summary.json",
+      "historical_performance_viewed": true,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "viterbi",
+      "suite": "LLVM MultiSource",
+      "family": "MultiSource/Applications/viterbi",
+      "kind": "application",
+      "split": "validation",
+      "source_lines": 297,
+      "functions": 15,
+      "blocks": 124,
+      "edges": 178,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/viterbi/viterbi/viterbi",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/all-flows-v2/viterbi/viterbi/viterbi/viterbi.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/viterbi/viterbi/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/viterbi/viterbi/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/viterbi/viterbi/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/viterbi/viterbi/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/viterbi/viterbi/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/viterbi/viterbi/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/viterbi",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/summary.json",
+      "historical_performance_viewed": true,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "automotive-basicmath",
+      "suite": "LLVM MultiSource",
+      "family": "MultiSource/Benchmarks/MiBench/automotive-basicmath",
+      "kind": "application",
+      "split": "development",
+      "source_lines": 316,
+      "functions": 5,
+      "blocks": 65,
+      "edges": 90,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/automotive-basicmath/automotive-basicmath/automotive-basicmath",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/HashProgramOutput.sh",
+            "%o"
+          ],
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/all-flows-v2/automotive-basicmath/automotive-basicmath/automotive-basicmath/automotive-basicmath.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/automotive-basicmath/automotive-basicmath/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/automotive-basicmath/automotive-basicmath/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/automotive-basicmath/automotive-basicmath/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/automotive-basicmath/automotive-basicmath/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/automotive-basicmath/automotive-basicmath/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/automotive-basicmath/automotive-basicmath/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/automotive-basicmath",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/summary.json",
+      "historical_performance_viewed": true,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "aha",
+      "suite": "LLVM MultiSource",
+      "family": "MultiSource/Applications/aha",
+      "kind": "application",
+      "split": "validation",
+      "source_lines": 491,
+      "functions": 32,
+      "blocks": 176,
+      "edges": 265,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/aha/aha/aha",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/all-flows-v2/aha/aha/aha/aha.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/aha/aha/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/aha/aha/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/aha/aha/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/aha/aha/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/aha/aha/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/aha/aha/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/aha",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/summary.json",
+      "historical_performance_viewed": true,
+      "used_for_interval_calibration": true
+    },
+    {
+      "program": "telecomm-fft",
+      "suite": "LLVM MultiSource",
+      "family": "MultiSource/Benchmarks/MiBench/telecomm-FFT",
+      "kind": "application",
+      "split": "development",
+      "source_lines": 527,
+      "functions": 12,
+      "blocks": 116,
+      "edges": 165,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [
+          "8",
+          "32768",
+          "-i"
+        ],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/telecomm-fft/telecomm-fft/telecomm-FFT",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/HashProgramOutput.sh",
+            "%o"
+          ],
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "-a",
+            "0.00001",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/all-flows-v2/telecomm-fft/telecomm-fft/telecomm-FFT/telecomm-fft.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/telecomm-fft/telecomm-fft/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/telecomm-fft/telecomm-fft/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/telecomm-fft/telecomm-fft/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/telecomm-fft/telecomm-fft/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/telecomm-fft/telecomm-fft/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/telecomm-fft/telecomm-fft/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/telecomm-fft",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/summary.json",
+      "historical_performance_viewed": true,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "network-patricia",
+      "suite": "LLVM MultiSource",
+      "family": "MultiSource/Benchmarks/MiBench/network-patricia",
+      "kind": "application",
+      "split": "validation",
+      "source_lines": 543,
+      "functions": 7,
+      "blocks": 140,
+      "edges": 198,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [
+          "large.udp"
+        ],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/network-patricia/network-patricia/network-patricia",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/HashProgramOutput.sh",
+            "%o"
+          ],
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/all-flows-v2/network-patricia/network-patricia/network-patricia/network-patricia.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/network-patricia/network-patricia/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/network-patricia/network-patricia/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/network-patricia/network-patricia/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/network-patricia/network-patricia/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/network-patricia/network-patricia/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/network-patricia/network-patricia/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/network-patricia",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/summary.json",
+      "historical_performance_viewed": true,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "anagram",
+      "suite": "LLVM MultiSource",
+      "family": "MultiSource/Benchmarks/Ptrdist/anagram",
+      "kind": "application",
+      "split": "test",
+      "source_lines": 657,
+      "functions": 18,
+      "blocks": 225,
+      "edges": 359,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [
+          "words",
+          "2"
+        ],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/nonlocal-flows-v1/anagram/anagram/anagram",
+        "stdin": "/data/chaoni/chengli/draper-node3/data/nonlocal-flows-v1/anagram/anagram/anagram/input.OUT",
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/nonlocal-flows-v1/anagram/anagram/anagram/anagram.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/nonlocal-flows-v1/anagram/anagram/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/nonlocal-flows-v1/anagram/anagram/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/nonlocal-flows-v1/anagram/anagram/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/nonlocal-flows-v1/anagram/anagram/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/nonlocal-flows-v1/anagram/anagram/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/nonlocal-flows-v1/anagram/anagram/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/nonlocal-flows-v1/anagram",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/summary.json",
+      "historical_performance_viewed": true,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "automotive-bitcount",
+      "suite": "LLVM MultiSource",
+      "family": "MultiSource/Benchmarks/MiBench/automotive-bitcount",
+      "kind": "application",
+      "split": "development",
+      "source_lines": 671,
+      "functions": 22,
+      "blocks": 76,
+      "edges": 117,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [
+          "1125000"
+        ],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/automotive-bitcount/automotive-bitcount/automotive-bitcount",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/all-flows-v2/automotive-bitcount/automotive-bitcount/automotive-bitcount/automotive-bitcount.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/automotive-bitcount/automotive-bitcount/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/automotive-bitcount/automotive-bitcount/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/automotive-bitcount/automotive-bitcount/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/automotive-bitcount/automotive-bitcount/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/automotive-bitcount/automotive-bitcount/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/automotive-bitcount/automotive-bitcount/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/automotive-bitcount",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/summary.json",
+      "historical_performance_viewed": true,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "ks",
+      "suite": "LLVM MultiSource",
+      "family": "MultiSource/Benchmarks/Ptrdist/ks",
+      "kind": "application",
+      "split": "development",
+      "source_lines": 685,
+      "functions": 14,
+      "blocks": 197,
+      "edges": 276,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [
+          "KL-4.in"
+        ],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/ks/ks/ks",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/all-flows-v2/ks/ks/ks/ks.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/ks/ks/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/ks/ks/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/ks/ks/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/ks/ks/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/ks/ks/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/ks/ks/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/ks",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/summary.json",
+      "historical_performance_viewed": true,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "minisat",
+      "suite": "LLVM MultiSource",
+      "family": "MultiSource/Applications/minisat",
+      "kind": "application",
+      "split": "test",
+      "source_lines": 1066,
+      "functions": 198,
+      "blocks": 1043,
+      "edges": 1588,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [
+          "-verbosity=0",
+          "short.cnf"
+        ],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/minisat/minisat/minisat",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "-r",
+            "0.1",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/all-flows-v2/minisat/minisat/minisat/minisat.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 10
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/minisat/minisat/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/minisat/minisat/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/minisat/minisat/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/minisat/minisat/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/minisat/minisat/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/minisat/minisat/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/minisat",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/summary.json",
+      "historical_performance_viewed": true,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "security-rijndael",
+      "suite": "LLVM MultiSource",
+      "family": "MultiSource/Benchmarks/MiBench/security-rijndael",
+      "kind": "application",
+      "split": "development",
+      "source_lines": 1142,
+      "functions": 7,
+      "blocks": 150,
+      "edges": 212,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [
+          "output_large.enc",
+          "/dev/null",
+          "d",
+          "1234567890abcdeffedcba09876543211234567890abcdeffedcba0987654321"
+        ],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/security-rijndael/security-rijndael/security-rijndael",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/HashProgramOutput.sh",
+            "%o"
+          ],
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/all-flows-v2/security-rijndael/security-rijndael/security-rijndael/security-rijndael.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/security-rijndael/security-rijndael/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/security-rijndael/security-rijndael/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/security-rijndael/security-rijndael/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/security-rijndael/security-rijndael/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/security-rijndael/security-rijndael/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/security-rijndael/security-rijndael/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/security-rijndael",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/summary.json",
+      "historical_performance_viewed": true,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "sgefa",
+      "suite": "LLVM MultiSource",
+      "family": "MultiSource/Applications/sgefa",
+      "kind": "application",
+      "split": "development",
+      "source_lines": 1185,
+      "functions": 20,
+      "blocks": 558,
+      "edges": 782,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/sgefa/sgefa/sgefa",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "-r",
+            "0.0001",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/all-flows-v2/sgefa/sgefa/sgefa/sgefa.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/sgefa/sgefa/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/sgefa/sgefa/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/sgefa/sgefa/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/sgefa/sgefa/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/sgefa/sgefa/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/sgefa/sgefa/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/sgefa",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/summary.json",
+      "historical_performance_viewed": true,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "ft",
+      "suite": "LLVM MultiSource",
+      "family": "MultiSource/Benchmarks/Ptrdist/ft",
+      "kind": "application",
+      "split": "development",
+      "source_lines": 1265,
+      "functions": 37,
+      "blocks": 241,
+      "edges": 351,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [
+          "1500",
+          "100000"
+        ],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/ft/ft/ft",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/HashProgramOutput.sh",
+            "%o"
+          ],
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/all-flows-v2/ft/ft/ft/ft.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/ft/ft/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/ft/ft/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/ft/ft/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/ft/ft/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/ft/ft/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/ft/ft/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/ft",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/summary.json",
+      "historical_performance_viewed": true,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "hexxagon",
+      "suite": "LLVM MultiSource",
+      "family": "MultiSource/Applications/hexxagon",
+      "kind": "application",
+      "split": "development",
+      "source_lines": 1563,
+      "functions": 76,
+      "blocks": 712,
+      "edges": 1037,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/hexxagon/hexxagon/hexxagon",
+        "stdin": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/hexxagon/hexxagon/hexxagon/input",
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/all-flows-v2/hexxagon/hexxagon/hexxagon/hexxagon.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/hexxagon/hexxagon/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/hexxagon/hexxagon/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/hexxagon/hexxagon/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/hexxagon/hexxagon/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/hexxagon/hexxagon/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/hexxagon/hexxagon/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/hexxagon",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/summary.json",
+      "historical_performance_viewed": true,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "automotive-susan",
+      "suite": "LLVM MultiSource",
+      "family": "MultiSource/Benchmarks/MiBench/automotive-susan",
+      "kind": "application",
+      "split": "development",
+      "source_lines": 2125,
+      "functions": 21,
+      "blocks": 710,
+      "edges": 1032,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [
+          "input_large.pgm",
+          "/dev/null",
+          "-s"
+        ],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/automotive-susan/automotive-susan/automotive-susan",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/HashProgramOutput.sh",
+            "%o"
+          ],
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/all-flows-v2/automotive-susan/automotive-susan/automotive-susan/automotive-susan.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/automotive-susan/automotive-susan/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/automotive-susan/automotive-susan/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/automotive-susan/automotive-susan/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/automotive-susan/automotive-susan/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/automotive-susan/automotive-susan/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/automotive-susan/automotive-susan/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/automotive-susan",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/summary.json",
+      "historical_performance_viewed": true,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "hbd",
+      "suite": "LLVM MultiSource",
+      "family": "MultiSource/Applications/hbd",
+      "kind": "application",
+      "split": "development",
+      "source_lines": 2271,
+      "functions": 86,
+      "blocks": 1491,
+      "edges": 2167,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [
+          "Sort.class"
+        ],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/hbd/hbd/hbd",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/all-flows-v2/hbd/hbd/hbd/hbd.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/hbd/hbd/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/hbd/hbd/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/hbd/hbd/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/hbd/hbd/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/hbd/hbd/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/hbd/hbd/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/hbd",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/summary.json",
+      "historical_performance_viewed": true,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "lambda",
+      "suite": "LLVM MultiSource",
+      "family": "MultiSource/Applications/lambda-0.1.3",
+      "kind": "application",
+      "split": "test",
+      "source_lines": 2454,
+      "functions": 166,
+      "blocks": 1892,
+      "edges": 2807,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/lambda/lambda/lambda-0.1.3",
+        "stdin": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/lambda/lambda/lambda-0.1.3/input",
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/all-flows-v2/lambda/lambda/lambda-0.1.3/lambda.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/lambda/lambda/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/lambda/lambda/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/lambda/lambda/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/lambda/lambda/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/lambda/lambda/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/lambda/lambda/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/lambda",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/summary.json",
+      "historical_performance_viewed": true,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "yacr2",
+      "suite": "LLVM MultiSource",
+      "family": "MultiSource/Benchmarks/Ptrdist/yacr2",
+      "kind": "application",
+      "split": "development",
+      "source_lines": 3217,
+      "functions": 58,
+      "blocks": 1037,
+      "edges": 1458,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [
+          "input2.in"
+        ],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/yacr2/yacr2/yacr2",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/HashProgramOutput.sh",
+            "%o"
+          ],
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/all-flows-v2/yacr2/yacr2/yacr2/yacr2.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/yacr2/yacr2/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/yacr2/yacr2/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/yacr2/yacr2/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/yacr2/yacr2/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/yacr2/yacr2/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/yacr2/yacr2/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/yacr2",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/summary.json",
+      "historical_performance_viewed": true,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "Obsequi",
+      "suite": "LLVM MultiSource",
+      "family": "MultiSource/Applications/obsequi",
+      "kind": "application",
+      "split": "development",
+      "source_lines": 3582,
+      "functions": 83,
+      "blocks": 1205,
+      "edges": 1727,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/Obsequi/Obsequi/obsequi",
+        "stdin": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/Obsequi/Obsequi/obsequi/input",
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/all-flows-v2/Obsequi/Obsequi/obsequi/Obsequi.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/Obsequi/Obsequi/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/Obsequi/Obsequi/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/Obsequi/Obsequi/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/Obsequi/Obsequi/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/Obsequi/Obsequi/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/Obsequi/Obsequi/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/Obsequi",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/summary.json",
+      "historical_performance_viewed": true,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "SIBsim4",
+      "suite": "LLVM MultiSource",
+      "family": "MultiSource/Applications/SIBsim4",
+      "kind": "application",
+      "split": "development",
+      "source_lines": 3821,
+      "functions": 68,
+      "blocks": 1760,
+      "edges": 2477,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [
+          "-A4",
+          "x.fa",
+          "y.fa"
+        ],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/SIBsim4/SIBsim4/SIBsim4",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/all-flows-v2/SIBsim4/SIBsim4/SIBsim4/SIBsim4.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/SIBsim4/SIBsim4/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/SIBsim4/SIBsim4/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/SIBsim4/SIBsim4/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/SIBsim4/SIBsim4/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/SIBsim4/SIBsim4/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/SIBsim4/SIBsim4/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/SIBsim4",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/summary.json",
+      "historical_performance_viewed": true,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "spiff",
+      "suite": "LLVM MultiSource",
+      "family": "MultiSource/Applications/spiff",
+      "kind": "application",
+      "split": "development",
+      "source_lines": 4749,
+      "functions": 99,
+      "blocks": 1197,
+      "edges": 1719,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [
+          "Sample.3",
+          "Sample.4"
+        ],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/spiff/spiff/spiff",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/all-flows-v2/spiff/spiff/spiff/spiff.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm"
+        ],
+        "expected_exit": 1
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/spiff/spiff/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/spiff/spiff/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/spiff/spiff/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/spiff/spiff/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/spiff/spiff/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/spiff/spiff/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/spiff",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/summary.json",
+      "historical_performance_viewed": true,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "telecomm-gsm",
+      "suite": "LLVM MultiSource",
+      "family": "MultiSource/Benchmarks/MiBench/telecomm-gsm",
+      "kind": "application",
+      "split": "test",
+      "source_lines": 5477,
+      "functions": 92,
+      "blocks": 917,
+      "edges": 1326,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [
+          "-fps",
+          "-c",
+          "large.au"
+        ],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/telecomm-gsm/telecomm-gsm/telecomm-gsm",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/HashProgramOutput.sh",
+            "%o"
+          ],
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/all-flows-v2/telecomm-gsm/telecomm-gsm/telecomm-gsm/telecomm-gsm.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/telecomm-gsm/telecomm-gsm/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/telecomm-gsm/telecomm-gsm/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/telecomm-gsm/telecomm-gsm/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/telecomm-gsm/telecomm-gsm/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/telecomm-gsm/telecomm-gsm/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/telecomm-gsm/telecomm-gsm/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/telecomm-gsm",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/summary.json",
+      "historical_performance_viewed": true,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "alacconvert-encode",
+      "suite": "LLVM MultiSource",
+      "family": "MultiSource/Applications/ALAC",
+      "kind": "application",
+      "split": "development",
+      "source_lines": 6061,
+      "functions": 117,
+      "blocks": 1257,
+      "edges": 1833,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [
+          "-",
+          "-"
+        ],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/alacconvert-encode/alacconvert-encode/encode",
+        "stdin": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/alacconvert-encode/alacconvert-encode/encode/tune.wav",
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/all-flows-v2/alacconvert-encode/alacconvert-encode/encode/alacconvert-encode.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/alacconvert-encode/alacconvert-encode/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/alacconvert-encode/alacconvert-encode/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/alacconvert-encode/alacconvert-encode/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/alacconvert-encode/alacconvert-encode/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/alacconvert-encode/alacconvert-encode/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/alacconvert-encode/alacconvert-encode/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/alacconvert-encode",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/summary.json",
+      "historical_performance_viewed": true,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "alacconvert-decode",
+      "suite": "LLVM MultiSource",
+      "family": "MultiSource/Applications/ALAC",
+      "kind": "application",
+      "split": "development",
+      "source_lines": 6062,
+      "functions": 117,
+      "blocks": 1257,
+      "edges": 1833,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [
+          "-",
+          "-"
+        ],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/alacconvert-decode/alacconvert-decode/decode",
+        "stdin": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/alacconvert-decode/alacconvert-decode/decode/tune.caf",
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/all-flows-v2/alacconvert-decode/alacconvert-decode/decode/alacconvert-decode.reference_output.little-endian"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/alacconvert-decode/alacconvert-decode/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/alacconvert-decode/alacconvert-decode/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/alacconvert-decode/alacconvert-decode/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/alacconvert-decode/alacconvert-decode/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/alacconvert-decode/alacconvert-decode/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/alacconvert-decode/alacconvert-decode/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/alacconvert-decode",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/summary.json",
+      "historical_performance_viewed": true,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "bc",
+      "suite": "LLVM MultiSource",
+      "family": "MultiSource/Benchmarks/Ptrdist/bc",
+      "kind": "application",
+      "split": "test",
+      "source_lines": 6627,
+      "functions": 102,
+      "blocks": 1740,
+      "edges": 2593,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/bc/bc/bc",
+        "stdin": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/bc/bc/bc/primes.b",
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/HashProgramOutput.sh",
+            "%o"
+          ],
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/all-flows-v2/bc/bc/bc/bc.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/bc/bc/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/bc/bc/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/bc/bc/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/bc/bc/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/bc/bc/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/bc/bc/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/bc",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/summary.json",
+      "historical_performance_viewed": true,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "siod",
+      "suite": "LLVM MultiSource",
+      "family": "MultiSource/Applications/siod",
+      "kind": "application",
+      "split": "development",
+      "source_lines": 7323,
+      "functions": 496,
+      "blocks": 4072,
+      "edges": 6020,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": false,
+      "collection_execution": {
+        "arguments": [
+          "-v1",
+          "test.scm"
+        ],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/siod/siod/siod",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/all-flows-v2/siod/siod/siod/siod.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/siod/siod/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/siod/siod/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/siod/siod/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/siod/siod/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/siod/siod/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/siod/siod/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/siod",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/summary.json",
+      "historical_performance_viewed": true,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "make_dparser",
+      "suite": "LLVM MultiSource",
+      "family": "MultiSource/Applications/d",
+      "kind": "application",
+      "split": "development",
+      "source_lines": 12329,
+      "functions": 321,
+      "blocks": 5134,
+      "edges": 7295,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": false,
+      "collection_execution": {
+        "arguments": [
+          "-v",
+          "grammar.g"
+        ],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/make_dparser/make_dparser/d",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/HashProgramOutput.sh",
+            "%o"
+          ],
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/all-flows-v2/make_dparser/make_dparser/d/make_dparser.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/make_dparser/make_dparser/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/make_dparser/make_dparser/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/make_dparser/make_dparser/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/make_dparser/make_dparser/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/make_dparser/make_dparser/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/make_dparser/make_dparser/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/make_dparser",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/summary.json",
+      "historical_performance_viewed": true,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "lua",
+      "suite": "LLVM MultiSource",
+      "family": "MultiSource/Applications/lua",
+      "kind": "application",
+      "split": "test",
+      "source_lines": 13413,
+      "functions": 718,
+      "blocks": 8622,
+      "edges": 14337,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": false,
+      "collection_execution": {
+        "arguments": [
+          "alltests.lua"
+        ],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/nonlocal-flows-v1/lua/lua/lua",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/HashProgramOutput.sh",
+            "%o"
+          ],
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/nonlocal-flows-v1/lua/lua/lua/lua.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/nonlocal-flows-v1/lua/lua/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/nonlocal-flows-v1/lua/lua/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/nonlocal-flows-v1/lua/lua/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/nonlocal-flows-v1/lua/lua/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/nonlocal-flows-v1/lua/lua/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/nonlocal-flows-v1/lua/lua/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/nonlocal-flows-v1/lua",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/summary.json",
+      "historical_performance_viewed": true,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "consumer-lame",
+      "suite": "LLVM MultiSource",
+      "family": "MultiSource/Benchmarks/MiBench/consumer-lame",
+      "kind": "application",
+      "split": "development",
+      "source_lines": 19298,
+      "functions": 235,
+      "blocks": 4097,
+      "edges": 5755,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [
+          "-S",
+          "large.wav",
+          "/dev/null"
+        ],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/consumer-lame/consumer-lame/consumer-lame",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/all-flows-v2/consumer-lame/consumer-lame/consumer-lame/consumer-lame.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/consumer-lame/consumer-lame/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/consumer-lame/consumer-lame/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/consumer-lame/consumer-lame/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/consumer-lame/consumer-lame/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/consumer-lame/consumer-lame/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/consumer-lame/consumer-lame/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/consumer-lame",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/summary.json",
+      "historical_performance_viewed": true,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "consumer-jpeg",
+      "suite": "LLVM MultiSource",
+      "family": "MultiSource/Benchmarks/MiBench/consumer-jpeg",
+      "kind": "application",
+      "split": "development",
+      "source_lines": 22960,
+      "functions": 380,
+      "blocks": 5412,
+      "edges": 7695,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [
+          "-dct",
+          "int",
+          "-ppm",
+          "-outfile",
+          "/dev/null",
+          "input_large.jpg"
+        ],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/consumer-jpeg/consumer-jpeg/consumer-jpeg",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/all-flows-v2/consumer-jpeg/consumer-jpeg/consumer-jpeg/consumer-jpeg.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/consumer-jpeg/consumer-jpeg/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/consumer-jpeg/consumer-jpeg/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/consumer-jpeg/consumer-jpeg/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/consumer-jpeg/consumer-jpeg/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/consumer-jpeg/consumer-jpeg/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/consumer-jpeg/consumer-jpeg/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/consumer-jpeg",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/summary.json",
+      "historical_performance_viewed": true,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "ldecod",
+      "suite": "LLVM MultiSource",
+      "family": "MultiSource/Applications/JM",
+      "kind": "application",
+      "split": "development",
+      "source_lines": 28699,
+      "functions": 442,
+      "blocks": 10047,
+      "edges": 14142,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [
+          "-i",
+          "data/test.264",
+          "-o",
+          "Output/test_dec.yuv",
+          "-r",
+          "data/test_rec.yuv"
+        ],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/ldecod/ldecod/ldecod",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/all-flows-v2/ldecod/ldecod/ldecod/ldecod.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/ldecod/ldecod/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/ldecod/ldecod/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/ldecod/ldecod/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/ldecod/ldecod/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/ldecod/ldecod/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/ldecod/ldecod/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/ldecod",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/summary.json",
+      "historical_performance_viewed": true,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "consumer-typeset",
+      "suite": "LLVM MultiSource",
+      "family": "MultiSource/Benchmarks/MiBench/consumer-typeset",
+      "kind": "application",
+      "split": "validation",
+      "source_lines": 38919,
+      "functions": 454,
+      "blocks": 27737,
+      "edges": 39320,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [
+          "-x",
+          "-I",
+          "data/include",
+          "-D",
+          "data/data",
+          "-F",
+          "data/font",
+          "-C",
+          "data/maps",
+          "-H",
+          "data/hyph",
+          "large.lout"
+        ],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/consumer-typeset/consumer-typeset/consumer-typeset",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/all-flows-v2/consumer-typeset/consumer-typeset/consumer-typeset/consumer-typeset.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/consumer-typeset/consumer-typeset/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/consumer-typeset/consumer-typeset/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/consumer-typeset/consumer-typeset/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/consumer-typeset/consumer-typeset/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/consumer-typeset/consumer-typeset/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/consumer-typeset/consumer-typeset/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/consumer-typeset",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/summary.json",
+      "historical_performance_viewed": true,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "kc",
+      "suite": "LLVM MultiSource",
+      "family": "MultiSource/Applications/kimwitu++",
+      "kind": "application",
+      "split": "validation",
+      "source_lines": 56084,
+      "functions": 5662,
+      "blocks": 22892,
+      "edges": 36353,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [
+          "-f",
+          "test",
+          "-o",
+          "-v",
+          "-s",
+          "kcc",
+          "inputs/f3.k",
+          "inputs/f2.k",
+          "inputs/f1.k"
+        ],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/kc/kc/kimwitu++",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/HashProgramOutput.sh",
+            "%o"
+          ],
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/all-flows-v2/kc/kc/kimwitu++/kc.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/kc/kc/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/kc/kc/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/kc/kc/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/kc/kc/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/kc/kc/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/kc/kc/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/kc",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/summary.json",
+      "historical_performance_viewed": true,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "lencod",
+      "suite": "LLVM MultiSource",
+      "family": "MultiSource/Applications/JM",
+      "kind": "application",
+      "split": "development",
+      "source_lines": 57035,
+      "functions": 832,
+      "blocks": 21913,
+      "edges": 30691,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [
+          "-d",
+          "data/encoder.cfg",
+          "-p",
+          "InputFile=data/foreman_part_qcif_444.yuv",
+          "-p",
+          "LeakyBucketRateFile=data/leakybucketrate.cfg",
+          "-p",
+          "QmatrixFile=data/q_matrix.cfg"
+        ],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/lencod/lencod/lencod",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "-r",
+            "0.025",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/all-flows-v2/lencod/lencod/lencod/lencod.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/lencod/lencod/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/lencod/lencod/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/lencod/lencod/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/lencod/lencod/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/lencod/lencod/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/lencod/lencod/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/lencod",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/summary.json",
+      "historical_performance_viewed": true,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "oggenc",
+      "suite": "LLVM MultiSource",
+      "family": "MultiSource/Applications/oggenc",
+      "kind": "application",
+      "split": "development",
+      "source_lines": 58356,
+      "functions": 430,
+      "blocks": 6548,
+      "edges": 9255,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [
+          "-Q",
+          "-s",
+          "901820",
+          "-"
+        ],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/oggenc/oggenc/oggenc",
+        "stdin": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/oggenc/oggenc/oggenc/tune",
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/all-flows-v2/oggenc/oggenc/oggenc/oggenc.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/oggenc/oggenc/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/oggenc/oggenc/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/oggenc/oggenc/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/oggenc/oggenc/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/oggenc/oggenc/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/oggenc/oggenc/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/oggenc",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/summary.json",
+      "historical_performance_viewed": true,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "clamscan",
+      "suite": "LLVM MultiSource",
+      "family": "MultiSource/Applications/ClamAV",
+      "kind": "application",
+      "split": "development",
+      "source_lines": 66762,
+      "functions": 964,
+      "blocks": 26613,
+      "edges": 38236,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [
+          "--debug",
+          "--exclude-dir",
+          ".svn",
+          "--verbose",
+          "-d/data/chaoni/chengli/draper-node3/data/all-flows-v2/clamscan/clamscan/ClamAV/dbdir",
+          "-r",
+          "inputs/clam.cab",
+          "inputs/clamdoc.tar.gz",
+          "inputs/clam.exe",
+          "inputs/clam.exe.bz2",
+          "inputs/clam-v2.rar",
+          "inputs/clam-v3.rar",
+          "inputs/clam.zip",
+          "inputs/README",
+          "inputs/rtf-test/Doc11.rtf",
+          "inputs/rtf-test/Doc1.rtf",
+          "inputs/rtf-test/Doc22.rtf",
+          "inputs/rtf-test/Doc2.rtf",
+          "inputs/rtf-test/doc3.rtf",
+          "inputs/rtf-test/docCLAMexe.rtf",
+          "inputs/rtf-test/rtf1.rtf",
+          "inputs/rtf-test/rtf-novirus.rtf"
+        ],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/clamscan/clamscan/ClamAV",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/all-flows-v2/clamscan/clamscan/ClamAV/clamscan.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/clamscan/clamscan/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/clamscan/clamscan/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/clamscan/clamscan/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/clamscan/clamscan/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/clamscan/clamscan/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/clamscan/clamscan/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/clamscan",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/summary.json",
+      "historical_performance_viewed": true,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "SPASS",
+      "suite": "LLVM MultiSource",
+      "family": "MultiSource/Applications/SPASS",
+      "kind": "application",
+      "split": "validation",
+      "source_lines": 69104,
+      "functions": 4313,
+      "blocks": 23831,
+      "edges": 35544,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [
+          "problem.dfg"
+        ],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/SPASS/SPASS/SPASS",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/HashProgramOutput.sh",
+            "%o"
+          ],
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/all-flows-v2/SPASS/SPASS/SPASS/SPASS.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/SPASS/SPASS/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/SPASS/SPASS/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/SPASS/SPASS/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/SPASS/SPASS/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/SPASS/SPASS/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/SPASS/SPASS/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/SPASS",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/summary.json",
+      "historical_performance_viewed": true,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "sqlite3",
+      "suite": "LLVM MultiSource",
+      "family": "sqlite",
+      "kind": "application",
+      "split": "development",
+      "source_lines": 86632,
+      "functions": 1085,
+      "blocks": 18282,
+      "edges": 26580,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [
+          "-init",
+          "sqlite3rc",
+          ":memory:"
+        ],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/sqlite3/sqlite3/sqlite3",
+        "stdin": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/sqlite3/sqlite3/sqlite3/commands",
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "-r",
+            "1.0e-9",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/all-flows-v2/sqlite3/sqlite3/sqlite3/sqlite3.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/sqlite3/sqlite3/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/sqlite3/sqlite3/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/sqlite3/sqlite3/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/sqlite3/sqlite3/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/sqlite3/sqlite3/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/sqlite3/sqlite3/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/all-flows-v2/sqlite3",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/summary.json",
+      "historical_performance_viewed": true,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "floyd-warshall",
+      "suite": "PolyBench",
+      "family": "SingleSource/Benchmarks/Polybench/medley/floyd-warshall",
+      "kind": "loop kernel",
+      "split": "test",
+      "source_lines": 172,
+      "functions": 16,
+      "blocks": 80,
+      "edges": 118,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/floyd-warshall/floyd-warshall/floyd-warshall",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/HashProgramOutput.sh",
+            "%o"
+          ],
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/floyd-warshall/floyd-warshall/floyd-warshall/floyd-warshall.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/floyd-warshall/floyd-warshall/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/floyd-warshall/floyd-warshall/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/floyd-warshall/floyd-warshall/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/floyd-warshall/floyd-warshall/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/floyd-warshall/floyd-warshall/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/floyd-warshall/floyd-warshall/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/floyd-warshall",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/summary.json",
+      "historical_performance_viewed": false,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "seidel-2d",
+      "suite": "PolyBench",
+      "family": "SingleSource/Benchmarks/Polybench/stencils/seidel-2d",
+      "kind": "loop kernel",
+      "split": "test",
+      "source_lines": 173,
+      "functions": 16,
+      "blocks": 66,
+      "edges": 99,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/seidel-2d/seidel-2d/seidel-2d",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/HashProgramOutput.sh",
+            "%o"
+          ],
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/seidel-2d/seidel-2d/seidel-2d/seidel-2d.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/seidel-2d/seidel-2d/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/seidel-2d/seidel-2d/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/seidel-2d/seidel-2d/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/seidel-2d/seidel-2d/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/seidel-2d/seidel-2d/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/seidel-2d/seidel-2d/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/seidel-2d",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/summary.json",
+      "historical_performance_viewed": false,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "jacobi-1d",
+      "suite": "PolyBench",
+      "family": "SingleSource/Benchmarks/Polybench/stencils/jacobi-1d",
+      "kind": "loop kernel",
+      "split": "development",
+      "source_lines": 178,
+      "functions": 16,
+      "blocks": 57,
+      "edges": 87,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/jacobi-1d/jacobi-1d/jacobi-1d",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/HashProgramOutput.sh",
+            "%o"
+          ],
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/jacobi-1d/jacobi-1d/jacobi-1d/jacobi-1d.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/jacobi-1d/jacobi-1d/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/jacobi-1d/jacobi-1d/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/jacobi-1d/jacobi-1d/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/jacobi-1d/jacobi-1d/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/jacobi-1d/jacobi-1d/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/jacobi-1d/jacobi-1d/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/jacobi-1d",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/summary.json",
+      "historical_performance_viewed": false,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "jacobi-2d",
+      "suite": "PolyBench",
+      "family": "SingleSource/Benchmarks/Polybench/stencils/jacobi-2d",
+      "kind": "loop kernel",
+      "split": "development",
+      "source_lines": 187,
+      "functions": 16,
+      "blocks": 78,
+      "edges": 115,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/jacobi-2d/jacobi-2d/jacobi-2d",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/HashProgramOutput.sh",
+            "%o"
+          ],
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/jacobi-2d/jacobi-2d/jacobi-2d/jacobi-2d.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/jacobi-2d/jacobi-2d/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/jacobi-2d/jacobi-2d/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/jacobi-2d/jacobi-2d/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/jacobi-2d/jacobi-2d/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/jacobi-2d/jacobi-2d/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/jacobi-2d/jacobi-2d/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/jacobi-2d",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/summary.json",
+      "historical_performance_viewed": false,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "trisolv",
+      "suite": "PolyBench",
+      "family": "SingleSource/Benchmarks/Polybench/linear-algebra/solvers/trisolv",
+      "kind": "loop kernel",
+      "split": "development",
+      "source_lines": 188,
+      "functions": 14,
+      "blocks": 34,
+      "edges": 55,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/trisolv/trisolv/trisolv",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/HashProgramOutput.sh",
+            "%o"
+          ],
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/trisolv/trisolv/trisolv/trisolv.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/trisolv/trisolv/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/trisolv/trisolv/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/trisolv/trisolv/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/trisolv/trisolv/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/trisolv/trisolv/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/trisolv/trisolv/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/trisolv",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/summary.json",
+      "historical_performance_viewed": false,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "atax",
+      "suite": "PolyBench",
+      "family": "SingleSource/Benchmarks/Polybench/linear-algebra/kernels/atax",
+      "kind": "loop kernel",
+      "split": "development",
+      "source_lines": 196,
+      "functions": 14,
+      "blocks": 43,
+      "edges": 67,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/atax/atax/atax",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/HashProgramOutput.sh",
+            "%o"
+          ],
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/atax/atax/atax/atax.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/atax/atax/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/atax/atax/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/atax/atax/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/atax/atax/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/atax/atax/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/atax/atax/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/atax",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/summary.json",
+      "historical_performance_viewed": false,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "lu",
+      "suite": "PolyBench",
+      "family": "SingleSource/Benchmarks/Polybench/linear-algebra/solvers/lu",
+      "kind": "loop kernel",
+      "split": "validation",
+      "source_lines": 202,
+      "functions": 16,
+      "blocks": 102,
+      "edges": 147,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/lu/lu/lu",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/HashProgramOutput.sh",
+            "%o"
+          ],
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/lu/lu/lu/lu.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/lu/lu/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/lu/lu/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/lu/lu/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/lu/lu/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/lu/lu/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/lu/lu/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/lu",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/summary.json",
+      "historical_performance_viewed": false,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "doitgen",
+      "suite": "PolyBench",
+      "family": "SingleSource/Benchmarks/Polybench/linear-algebra/kernels/doitgen",
+      "kind": "loop kernel",
+      "split": "validation",
+      "source_lines": 206,
+      "functions": 16,
+      "blocks": 93,
+      "edges": 135,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/doitgen/doitgen/doitgen",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/HashProgramOutput.sh",
+            "%o"
+          ],
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/doitgen/doitgen/doitgen/doitgen.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/doitgen/doitgen/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/doitgen/doitgen/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/doitgen/doitgen/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/doitgen/doitgen/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/doitgen/doitgen/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/doitgen/doitgen/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/doitgen",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/summary.json",
+      "historical_performance_viewed": false,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "syrk",
+      "suite": "PolyBench",
+      "family": "SingleSource/Benchmarks/Polybench/linear-algebra/blas/syrk",
+      "kind": "loop kernel",
+      "split": "validation",
+      "source_lines": 213,
+      "functions": 16,
+      "blocks": 78,
+      "edges": 115,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/syrk/syrk/syrk",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/HashProgramOutput.sh",
+            "%o"
+          ],
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/syrk/syrk/syrk/syrk.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/syrk/syrk/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/syrk/syrk/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/syrk/syrk/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/syrk/syrk/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/syrk/syrk/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/syrk/syrk/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/syrk",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/summary.json",
+      "historical_performance_viewed": false,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "trmm",
+      "suite": "PolyBench",
+      "family": "SingleSource/Benchmarks/Polybench/linear-algebra/blas/trmm",
+      "kind": "loop kernel",
+      "split": "development",
+      "source_lines": 213,
+      "functions": 14,
+      "blocks": 43,
+      "edges": 67,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/trmm/trmm/trmm",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/HashProgramOutput.sh",
+            "%o"
+          ],
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/trmm/trmm/trmm/trmm.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/trmm/trmm/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/trmm/trmm/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/trmm/trmm/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/trmm/trmm/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/trmm/trmm/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/trmm/trmm/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/trmm",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/summary.json",
+      "historical_performance_viewed": false,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "durbin",
+      "suite": "PolyBench",
+      "family": "SingleSource/Benchmarks/Polybench/linear-algebra/solvers/durbin",
+      "kind": "loop kernel",
+      "split": "development",
+      "source_lines": 215,
+      "functions": 15,
+      "blocks": 65,
+      "edges": 97,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/durbin/durbin/durbin",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/HashProgramOutput.sh",
+            "%o"
+          ],
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/durbin/durbin/durbin/durbin.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/durbin/durbin/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/durbin/durbin/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/durbin/durbin/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/durbin/durbin/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/durbin/durbin/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/durbin/durbin/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/durbin",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/summary.json",
+      "historical_performance_viewed": false,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "gesummv",
+      "suite": "PolyBench",
+      "family": "SingleSource/Benchmarks/Polybench/linear-algebra/blas/gesummv",
+      "kind": "loop kernel",
+      "split": "development",
+      "source_lines": 216,
+      "functions": 14,
+      "blocks": 34,
+      "edges": 55,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/gesummv/gesummv/gesummv",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/HashProgramOutput.sh",
+            "%o"
+          ],
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/gesummv/gesummv/gesummv/gesummv.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/gesummv/gesummv/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/gesummv/gesummv/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/gesummv/gesummv/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/gesummv/gesummv/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/gesummv/gesummv/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/gesummv/gesummv/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/gesummv",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/summary.json",
+      "historical_performance_viewed": false,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "nussinov",
+      "suite": "PolyBench",
+      "family": "SingleSource/Benchmarks/Polybench/medley/nussinov",
+      "kind": "loop kernel",
+      "split": "development",
+      "source_lines": 216,
+      "functions": 16,
+      "blocks": 121,
+      "edges": 173,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/nussinov/nussinov/nussinov",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/HashProgramOutput.sh",
+            "%o"
+          ],
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/nussinov/nussinov/nussinov/nussinov.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/nussinov/nussinov/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/nussinov/nussinov/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/nussinov/nussinov/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/nussinov/nussinov/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/nussinov/nussinov/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/nussinov/nussinov/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/nussinov",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/summary.json",
+      "historical_performance_viewed": false,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "heat-3d",
+      "suite": "PolyBench",
+      "family": "SingleSource/Benchmarks/Polybench/stencils/heat-3d",
+      "kind": "loop kernel",
+      "split": "development",
+      "source_lines": 216,
+      "functions": 14,
+      "blocks": 58,
+      "edges": 87,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/heat-3d/heat-3d/heat-3d",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/HashProgramOutput.sh",
+            "%o"
+          ],
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/heat-3d/heat-3d/heat-3d/heat-3d.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/heat-3d/heat-3d/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/heat-3d/heat-3d/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/heat-3d/heat-3d/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/heat-3d/heat-3d/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/heat-3d/heat-3d/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/heat-3d/heat-3d/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/heat-3d",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/summary.json",
+      "historical_performance_viewed": false,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "covariance",
+      "suite": "PolyBench",
+      "family": "SingleSource/Benchmarks/Polybench/datamining/covariance",
+      "kind": "loop kernel",
+      "split": "development",
+      "source_lines": 222,
+      "functions": 14,
+      "blocks": 52,
+      "edges": 79,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/covariance/covariance/covariance",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/HashProgramOutput.sh",
+            "%o"
+          ],
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/covariance/covariance/covariance/covariance.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/covariance/covariance/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/covariance/covariance/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/covariance/covariance/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/covariance/covariance/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/covariance/covariance/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/covariance/covariance/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/covariance",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/summary.json",
+      "historical_performance_viewed": false,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "bicg",
+      "suite": "PolyBench",
+      "family": "SingleSource/Benchmarks/Polybench/linear-algebra/kernels/bicg",
+      "kind": "loop kernel",
+      "split": "test",
+      "source_lines": 224,
+      "functions": 14,
+      "blocks": 43,
+      "edges": 67,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/bicg/bicg/bicg",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/HashProgramOutput.sh",
+            "%o"
+          ],
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/bicg/bicg/bicg/bicg.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/bicg/bicg/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/bicg/bicg/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/bicg/bicg/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/bicg/bicg/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/bicg/bicg/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/bicg/bicg/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/bicg",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/summary.json",
+      "historical_performance_viewed": false,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "cholesky",
+      "suite": "PolyBench",
+      "family": "SingleSource/Benchmarks/Polybench/linear-algebra/solvers/cholesky",
+      "kind": "loop kernel",
+      "split": "test",
+      "source_lines": 226,
+      "functions": 16,
+      "blocks": 96,
+      "edges": 139,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/cholesky/cholesky/cholesky",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/HashProgramOutput.sh",
+            "%o"
+          ],
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/cholesky/cholesky/cholesky/cholesky.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/cholesky/cholesky/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/cholesky/cholesky/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/cholesky/cholesky/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/cholesky/cholesky/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/cholesky/cholesky/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/cholesky/cholesky/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/cholesky",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/summary.json",
+      "historical_performance_viewed": false,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "mvt",
+      "suite": "PolyBench",
+      "family": "SingleSource/Benchmarks/Polybench/linear-algebra/kernels/mvt",
+      "kind": "loop kernel",
+      "split": "development",
+      "source_lines": 229,
+      "functions": 16,
+      "blocks": 71,
+      "edges": 106,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/mvt/mvt/mvt",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/HashProgramOutput.sh",
+            "%o"
+          ],
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/mvt/mvt/mvt/mvt.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/mvt/mvt/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/mvt/mvt/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/mvt/mvt/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/mvt/mvt/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/mvt/mvt/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/mvt/mvt/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/mvt",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/summary.json",
+      "historical_performance_viewed": false,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "syr2k",
+      "suite": "PolyBench",
+      "family": "SingleSource/Benchmarks/Polybench/linear-algebra/blas/syr2k",
+      "kind": "loop kernel",
+      "split": "validation",
+      "source_lines": 232,
+      "functions": 16,
+      "blocks": 78,
+      "edges": 115,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/syr2k/syr2k/syr2k",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/HashProgramOutput.sh",
+            "%o"
+          ],
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/syr2k/syr2k/syr2k/syr2k.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/syr2k/syr2k/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/syr2k/syr2k/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/syr2k/syr2k/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/syr2k/syr2k/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/syr2k/syr2k/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/syr2k/syr2k/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/syr2k",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/summary.json",
+      "historical_performance_viewed": false,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "symm",
+      "suite": "PolyBench",
+      "family": "SingleSource/Benchmarks/Polybench/linear-algebra/blas/symm",
+      "kind": "loop kernel",
+      "split": "development",
+      "source_lines": 240,
+      "functions": 14,
+      "blocks": 49,
+      "edges": 75,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/symm/symm/symm",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/HashProgramOutput.sh",
+            "%o"
+          ],
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/symm/symm/symm/symm.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/symm/symm/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/symm/symm/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/symm/symm/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/symm/symm/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/symm/symm/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/symm/symm/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/symm",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/summary.json",
+      "historical_performance_viewed": false,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "fdtd-2d",
+      "suite": "PolyBench",
+      "family": "SingleSource/Benchmarks/Polybench/stencils/fdtd-2d",
+      "kind": "loop kernel",
+      "split": "validation",
+      "source_lines": 247,
+      "functions": 15,
+      "blocks": 89,
+      "edges": 129,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/fdtd-2d/fdtd-2d/fdtd-2d",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/HashProgramOutput.sh",
+            "%o"
+          ],
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/fdtd-2d/fdtd-2d/fdtd-2d/fdtd-2d.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/fdtd-2d/fdtd-2d/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/fdtd-2d/fdtd-2d/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/fdtd-2d/fdtd-2d/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/fdtd-2d/fdtd-2d/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/fdtd-2d/fdtd-2d/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/fdtd-2d/fdtd-2d/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/fdtd-2d",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/summary.json",
+      "historical_performance_viewed": false,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "gramschmidt",
+      "suite": "PolyBench",
+      "family": "SingleSource/Benchmarks/Polybench/linear-algebra/solvers/gramschmidt",
+      "kind": "loop kernel",
+      "split": "development",
+      "source_lines": 253,
+      "functions": 13,
+      "blocks": 66,
+      "edges": 97,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/gramschmidt/gramschmidt/gramschmidt",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/HashProgramOutput.sh",
+            "%o"
+          ],
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/gramschmidt/gramschmidt/gramschmidt/gramschmidt.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/gramschmidt/gramschmidt/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/gramschmidt/gramschmidt/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/gramschmidt/gramschmidt/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/gramschmidt/gramschmidt/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/gramschmidt/gramschmidt/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/gramschmidt/gramschmidt/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/gramschmidt",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/summary.json",
+      "historical_performance_viewed": false,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "adi",
+      "suite": "PolyBench",
+      "family": "SingleSource/Benchmarks/Polybench/stencils/adi",
+      "kind": "loop kernel",
+      "split": "development",
+      "source_lines": 275,
+      "functions": 14,
+      "blocks": 52,
+      "edges": 79,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/adi/adi/adi",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/HashProgramOutput.sh",
+            "%o"
+          ],
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/adi/adi/adi/adi.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/adi/adi/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/adi/adi/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/adi/adi/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/adi/adi/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/adi/adi/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/adi/adi/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/adi",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/summary.json",
+      "historical_performance_viewed": false,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "correlation",
+      "suite": "PolyBench",
+      "family": "SingleSource/Benchmarks/Polybench/datamining/correlation",
+      "kind": "loop kernel",
+      "split": "development",
+      "source_lines": 278,
+      "functions": 14,
+      "blocks": 61,
+      "edges": 91,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/correlation/correlation/correlation",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/HashProgramOutput.sh",
+            "%o"
+          ],
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/correlation/correlation/correlation/correlation.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/correlation/correlation/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/correlation/correlation/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/correlation/correlation/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/correlation/correlation/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/correlation/correlation/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/correlation/correlation/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/correlation",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/summary.json",
+      "historical_performance_viewed": false,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "gemver",
+      "suite": "PolyBench",
+      "family": "SingleSource/Benchmarks/Polybench/linear-algebra/blas/gemver",
+      "kind": "loop kernel",
+      "split": "development",
+      "source_lines": 282,
+      "functions": 13,
+      "blocks": 51,
+      "edges": 77,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/gemver/gemver/gemver",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/HashProgramOutput.sh",
+            "%o"
+          ],
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/gemver/gemver/gemver/gemver.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/gemver/gemver/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/gemver/gemver/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/gemver/gemver/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/gemver/gemver/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/gemver/gemver/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/gemver/gemver/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/gemver",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/summary.json",
+      "historical_performance_viewed": false,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "ludcmp",
+      "suite": "PolyBench",
+      "family": "SingleSource/Benchmarks/Polybench/linear-algebra/solvers/ludcmp",
+      "kind": "loop kernel",
+      "split": "test",
+      "source_lines": 282,
+      "functions": 15,
+      "blocks": 125,
+      "edges": 177,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/ludcmp/ludcmp/ludcmp",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/HashProgramOutput.sh",
+            "%o"
+          ],
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/ludcmp/ludcmp/ludcmp/ludcmp.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/ludcmp/ludcmp/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/ludcmp/ludcmp/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/ludcmp/ludcmp/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/ludcmp/ludcmp/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/ludcmp/ludcmp/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/ludcmp/ludcmp/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/ludcmp",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/summary.json",
+      "historical_performance_viewed": false,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "deriche",
+      "suite": "PolyBench",
+      "family": "SingleSource/Benchmarks/Polybench/medley/deriche",
+      "kind": "loop kernel",
+      "split": "development",
+      "source_lines": 340,
+      "functions": 16,
+      "blocks": 120,
+      "edges": 171,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/deriche/deriche/deriche",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/HashProgramOutput.sh",
+            "%o"
+          ],
+          [
+            "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/deriche/deriche/deriche/deriche.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/deriche/deriche/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/deriche/deriche/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/deriche/deriche/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/deriche/deriche/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/deriche/deriche/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/deriche/deriche/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/polybench-flows-v1/deriche",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/polybench-corpus-v1/summary.json",
+      "historical_performance_viewed": false,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "sqlite-modern",
+      "suite": "Modern applications",
+      "family": "sqlite",
+      "kind": "application",
+      "split": "development",
+      "source_lines": 311070,
+      "functions": 3911,
+      "blocks": 87927,
+      "edges": 138940,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [
+          ":memory:"
+        ],
+        "stdin": "/data/chaoni/chengli/draper-node3/data/teacher-apps-v1/inputs/queries.sql",
+        "cwd": "/data/chaoni/chengli/draper-node3/data/teacher-apps-v1/inputs",
+        "expected_exit": 0,
+        "append_exit": false,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-pthread",
+          "-ldl",
+          "-lpthread"
+        ],
+        "atomic_counters": true,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/teacher-apps-v1/sqlite-modern/reference.output"
+          ]
+        ]
+      },
+      "independent_evaluation_execution": {
+        "arguments": [
+          ":memory:"
+        ],
+        "stdin": "/data/chaoni/chengli/draper-node3/data/teacher-apps-v1/inputs/queries-test.sql",
+        "cwd": "/data/chaoni/chengli/draper-node3/data/teacher-apps-v1/inputs",
+        "expected_exit": 0,
+        "append_exit": false,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-pthread",
+          "-ldl",
+          "-lpthread"
+        ],
+        "atomic_counters": true,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/teacher-apps-v1/sqlite-modern/reference-test.output"
+          ]
+        ]
+      },
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/teacher-app-flows-v1/sqlite-modern/sqlite-modern/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/teacher-app-flows-v1/sqlite-modern/sqlite-modern/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/teacher-app-flows-v1/sqlite-modern/sqlite-modern/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/teacher-app-flows-v1/sqlite-modern/sqlite-modern/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/teacher-app-flows-v1/sqlite-modern/sqlite-modern/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/teacher-app-flows-v1/sqlite-modern/sqlite-modern/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/teacher-app-flows-v1/sqlite-modern",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/teacher-apps-v1/summary.json",
+      "historical_performance_viewed": false,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "zstd",
+      "suite": "Modern applications",
+      "family": "zstd",
+      "kind": "application",
+      "split": "test",
+      "source_lines": 43441,
+      "functions": 1965,
+      "blocks": 26818,
+      "edges": 43268,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [
+          "-q",
+          "--single-thread",
+          "-c",
+          "-3",
+          "/data/chaoni/chengli/draper-node3/data/teacher-apps-v1/inputs/source-code.txt"
+        ],
+        "stdin": null,
+        "cwd": "/data/chaoni/chengli/draper-node3/data/teacher-apps-v1/inputs",
+        "expected_exit": 0,
+        "append_exit": false,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-pthread",
+          "-ldl",
+          "-lpthread"
+        ],
+        "atomic_counters": true,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/teacher-apps-v1/zstd/reference.output"
+          ]
+        ]
+      },
+      "independent_evaluation_execution": {
+        "arguments": [
+          "-q",
+          "--single-thread",
+          "-c",
+          "-5",
+          "/data/chaoni/chengli/draper-node3/data/teacher-apps-v1/inputs/benchmark-source-code.txt"
+        ],
+        "stdin": null,
+        "cwd": "/data/chaoni/chengli/draper-node3/data/teacher-apps-v1/inputs",
+        "expected_exit": 0,
+        "append_exit": false,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-pthread",
+          "-ldl",
+          "-lpthread"
+        ],
+        "atomic_counters": true,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/teacher-apps-v1/zstd/reference-test.output"
+          ]
+        ]
+      },
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/teacher-app-flows-v1/zstd/zstd/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/teacher-app-flows-v1/zstd/zstd/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/teacher-app-flows-v1/zstd/zstd/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/teacher-app-flows-v1/zstd/zstd/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/teacher-app-flows-v1/zstd/zstd/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/teacher-app-flows-v1/zstd/zstd/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/teacher-app-flows-v1/zstd",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/teacher-apps-v1/summary.json",
+      "historical_performance_viewed": false,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "ffmpeg",
+      "suite": "Modern applications",
+      "family": "ffmpeg",
+      "kind": "application",
+      "split": "test",
+      "source_lines": 136356,
+      "functions": 4990,
+      "blocks": 78431,
+      "edges": 124653,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [
+          "-hide_banner",
+          "-loglevel",
+          "error",
+          "-filter_threads",
+          "1",
+          "-filter_complex_threads",
+          "1",
+          "-f",
+          "lavfi",
+          "-i",
+          "testsrc2=size=1280x720:rate=30",
+          "-frames:v",
+          "90",
+          "-vf",
+          "scale=640:360",
+          "-threads",
+          "1",
+          "-f",
+          "framemd5",
+          "-"
+        ],
+        "stdin": null,
+        "cwd": "/data/chaoni/chengli/draper-node3/data/teacher-apps-v1/inputs",
+        "expected_exit": 0,
+        "append_exit": false,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-pthread",
+          "-ldl",
+          "-lpthread"
+        ],
+        "atomic_counters": true,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/teacher-apps-v1/ffmpeg/reference.output"
+          ]
+        ]
+      },
+      "independent_evaluation_execution": {
+        "arguments": [
+          "-hide_banner",
+          "-loglevel",
+          "error",
+          "-filter_threads",
+          "1",
+          "-filter_complex_threads",
+          "1",
+          "-f",
+          "lavfi",
+          "-i",
+          "testsrc2=size=1920x1080:rate=30",
+          "-frames:v",
+          "120",
+          "-vf",
+          "scale=1280:720",
+          "-threads",
+          "1",
+          "-f",
+          "framemd5",
+          "-"
+        ],
+        "stdin": null,
+        "cwd": "/data/chaoni/chengli/draper-node3/data/teacher-apps-v1/inputs",
+        "expected_exit": 0,
+        "append_exit": false,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-pthread",
+          "-ldl",
+          "-lpthread"
+        ],
+        "atomic_counters": true,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/teacher-apps-v1/ffmpeg/reference-test.output"
+          ]
+        ]
+      },
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/teacher-app-flows-v1/ffmpeg/ffmpeg/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/teacher-app-flows-v1/ffmpeg/ffmpeg/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/teacher-app-flows-v1/ffmpeg/ffmpeg/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/teacher-app-flows-v1/ffmpeg/ffmpeg/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/teacher-app-flows-v1/ffmpeg/ffmpeg/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/teacher-app-flows-v1/ffmpeg/ffmpeg/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/teacher-app-flows-v1/ffmpeg",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/teacher-apps-v1/summary.json",
+      "historical_performance_viewed": false,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "pathfinder",
+      "suite": "Rodinia / MediaBench (LLVM subset)",
+      "family": "MultiSource/Benchmarks/Rodinia/pathfinder",
+      "kind": "loop kernel",
+      "split": "development",
+      "source_lines": 120,
+      "functions": 6,
+      "blocks": 61,
+      "edges": 86,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/pathfinder/pathfinder/pathfinder",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-corpus-v1/native/tools/HashProgramOutput.sh",
+            "%o"
+          ],
+          [
+            "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/pathfinder/pathfinder/pathfinder/pathfinder.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/pathfinder/pathfinder/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/pathfinder/pathfinder/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/pathfinder/pathfinder/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/pathfinder/pathfinder/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/pathfinder/pathfinder/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/pathfinder/pathfinder/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/pathfinder",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-corpus-v1/summary.json",
+      "historical_performance_viewed": false,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "hotspot",
+      "suite": "Rodinia / MediaBench (LLVM subset)",
+      "family": "MultiSource/Benchmarks/Rodinia/hotspot",
+      "kind": "loop kernel",
+      "split": "development",
+      "source_lines": 243,
+      "functions": 5,
+      "blocks": 59,
+      "edges": 82,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/hotspot/hotspot/hotspot",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-corpus-v1/native/tools/fpcmp-target",
+            "-a",
+            "0.00001",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/hotspot/hotspot/hotspot/hotspot.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/hotspot/hotspot/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/hotspot/hotspot/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/hotspot/hotspot/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/hotspot/hotspot/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/hotspot/hotspot/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/hotspot/hotspot/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/hotspot",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-corpus-v1/summary.json",
+      "historical_performance_viewed": false,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "backprop",
+      "suite": "Rodinia / MediaBench (LLVM subset)",
+      "family": "MultiSource/Benchmarks/Rodinia/backprop",
+      "kind": "loop kernel",
+      "split": "development",
+      "source_lines": 268,
+      "functions": 5,
+      "blocks": 101,
+      "edges": 138,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/backprop/backprop/backprop",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-corpus-v1/native/tools/fpcmp-target",
+            "-a",
+            "0.00001",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/backprop/backprop/backprop/backprop.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/backprop/backprop/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/backprop/backprop/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/backprop/backprop/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/backprop/backprop/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/backprop/backprop/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/backprop/backprop/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/backprop",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-corpus-v1/summary.json",
+      "historical_performance_viewed": false,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "rawcaudio",
+      "suite": "Rodinia / MediaBench (LLVM subset)",
+      "family": "MultiSource/Benchmarks/mediabench/adpcm",
+      "kind": "application",
+      "split": "development",
+      "source_lines": 283,
+      "functions": 3,
+      "blocks": 23,
+      "edges": 33,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/rawcaudio/rawcaudio/rawcaudio",
+        "stdin": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/rawcaudio/rawcaudio/rawcaudio/clinton.pcm",
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/rawcaudio/rawcaudio/rawcaudio/rawcaudio.reference_output.little-endian"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/rawcaudio/rawcaudio/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/rawcaudio/rawcaudio/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/rawcaudio/rawcaudio/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/rawcaudio/rawcaudio/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/rawcaudio/rawcaudio/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/rawcaudio/rawcaudio/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/rawcaudio",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-corpus-v1/summary.json",
+      "historical_performance_viewed": false,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "rawdaudio",
+      "suite": "Rodinia / MediaBench (LLVM subset)",
+      "family": "MultiSource/Benchmarks/mediabench/adpcm",
+      "kind": "application",
+      "split": "development",
+      "source_lines": 283,
+      "functions": 3,
+      "blocks": 23,
+      "edges": 33,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/rawdaudio/rawdaudio/rawdaudio",
+        "stdin": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/rawdaudio/rawdaudio/rawdaudio/clinton.adpcm",
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-corpus-v1/native/tools/HashProgramOutput.sh",
+            "%o"
+          ],
+          [
+            "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/rawdaudio/rawdaudio/rawdaudio/rawdaudio.reference_output.little-endian"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/rawdaudio/rawdaudio/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/rawdaudio/rawdaudio/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/rawdaudio/rawdaudio/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/rawdaudio/rawdaudio/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/rawdaudio/rawdaudio/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/rawdaudio/rawdaudio/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/rawdaudio",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-corpus-v1/summary.json",
+      "historical_performance_viewed": false,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "srad",
+      "suite": "Rodinia / MediaBench (LLVM subset)",
+      "family": "MultiSource/Benchmarks/Rodinia/srad",
+      "kind": "loop kernel",
+      "split": "test",
+      "source_lines": 387,
+      "functions": 5,
+      "blocks": 96,
+      "edges": 133,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/srad/srad/srad",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-corpus-v1/native/tools/fpcmp-target",
+            "-a",
+            "0.00001",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/srad/srad/srad/srad.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/srad/srad/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/srad/srad/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/srad/srad/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/srad/srad/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/srad/srad/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/srad/srad/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/srad",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-corpus-v1/summary.json",
+      "historical_performance_viewed": false,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "encode",
+      "suite": "Rodinia / MediaBench (LLVM subset)",
+      "family": "MultiSource/Benchmarks/mediabench/g721",
+      "kind": "application",
+      "split": "development",
+      "source_lines": 1479,
+      "functions": 26,
+      "blocks": 255,
+      "edges": 376,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [
+          "-4",
+          "-l"
+        ],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/encode/encode/g721encode",
+        "stdin": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/encode/encode/g721encode/clinton.pcm",
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/encode/encode/g721encode/encode.reference_output.little-endian"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/encode/encode/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/encode/encode/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/encode/encode/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/encode/encode/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/encode/encode/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/encode/encode/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/encode",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-corpus-v1/summary.json",
+      "historical_performance_viewed": false,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "toast",
+      "suite": "Rodinia / MediaBench (LLVM subset)",
+      "family": "MultiSource/Benchmarks/MiBench/telecomm-gsm",
+      "kind": "application",
+      "split": "test",
+      "source_lines": 5476,
+      "functions": 92,
+      "blocks": 917,
+      "edges": 1326,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [
+          "-cpl",
+          "clinton.pcm"
+        ],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/toast/toast/toast",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/toast/toast/toast/toast.reference_output.little-endian"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/toast/toast/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/toast/toast/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/toast/toast/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/toast/toast/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/toast/toast/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/toast/toast/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/toast",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-corpus-v1/summary.json",
+      "historical_performance_viewed": false,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "mpeg2decode",
+      "suite": "Rodinia / MediaBench (LLVM subset)",
+      "family": "MultiSource/Benchmarks/mediabench/mpeg2",
+      "kind": "application",
+      "split": "development",
+      "source_lines": 8692,
+      "functions": 116,
+      "blocks": 1646,
+      "edges": 2353,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [
+          "-b",
+          "mei16v2.m2v",
+          "-r",
+          "-f",
+          "-o0",
+          "tmp%d"
+        ],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/mpeg2decode/mpeg2decode/mpeg2dec",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/mpeg2decode/mpeg2decode/mpeg2dec/mpeg2decode.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm",
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/mpeg2decode/mpeg2decode/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/mpeg2decode/mpeg2decode/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/mpeg2decode/mpeg2decode/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/mpeg2decode/mpeg2decode/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/mpeg2decode/mpeg2decode/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/mpeg2decode/mpeg2decode/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/mpeg2decode",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-corpus-v1/summary.json",
+      "historical_performance_viewed": false,
+      "used_for_interval_calibration": false
+    },
+    {
+      "program": "cjpeg",
+      "suite": "Rodinia / MediaBench (LLVM subset)",
+      "family": "MultiSource/Benchmarks/MiBench/consumer-jpeg",
+      "kind": "application",
+      "split": "development",
+      "source_lines": 23727,
+      "functions": 392,
+      "blocks": 5638,
+      "edges": 8017,
+      "exact_flow_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "repeated_counts_equal": true,
+      "collection_execution": {
+        "arguments": [
+          "-dct",
+          "int",
+          "-progressive",
+          "-opt",
+          "testimg.ppm"
+        ],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/cjpeg/cjpeg/jpeg-6a",
+        "stdin": null,
+        "checks": [
+          [
+            "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-corpus-v1/native/tools/fpcmp-target",
+            "%o",
+            "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/cjpeg/cjpeg/jpeg-6a/cjpeg.reference_output"
+          ]
+        ],
+        "append_exit": true,
+        "compiler": "clang++",
+        "link_flags": [
+          "-lm"
+        ],
+        "expected_exit": 0
+      },
+      "independent_evaluation_execution": null,
+      "files": {
+        "canonical_ir": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/cjpeg/cjpeg/canonical.ll",
+        "graph": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/cjpeg/cjpeg/graph.json",
+        "exact_run_0": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/cjpeg/cjpeg/exact-0.json",
+        "exact_run_1": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/cjpeg/cjpeg/exact-1.json",
+        "simulated_observations": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/cjpeg/cjpeg/observations.json",
+        "initial_profile": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/cjpeg/cjpeg/profi.json"
+      },
+      "flow_directory": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-flows-v1/cjpeg",
+      "source_record": "/data/chaoni/chengli/draper-node3/data/rodinia-mediabench-corpus-v1/summary.json",
+      "historical_performance_viewed": false,
+      "used_for_interval_calibration": false
+    }
+  ]
+}

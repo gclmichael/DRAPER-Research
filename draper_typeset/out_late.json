@@ -1,0 +1,4 @@
+{
+ "B105": "$$\nP(\\text{block is hot} \\mid \\text{sampled evidence}) \\ge 1 - \\alpha\n$$",
+ "B106": "$$\n\\|\\delta_x\\|_1 \\le \\text{budget}\n$$"
+}

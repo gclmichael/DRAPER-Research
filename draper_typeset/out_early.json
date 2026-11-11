@@ -1,0 +1,22 @@
+{
+ "B001": "还原 counts 越接近真实执行 counts，PGO 效果越好。",
+ "B002": "- 传统目标: minimize $\\|\\text{inferred counts} - \\text{true counts}\\|$\n- DRAPER 目标: minimize $\\text{expected decision loss} = \\sum\\limits_{\\text{over PGO predicates of}} \\text{cost}(\\text{flip predicate}) \\cdot \\text{probability}(\\text{flip predicate})$",
+ "B004": "$$\n\\begin{aligned}\n\\text{inlined.B1} &\\leftarrow \\text{identity}/\\text{inline}(B_1) \\\\\n\\text{inlined.B2} &\\leftarrow \\text{identity}/\\text{inline}(B_2) \\\\\n\\text{inlined.B3} &\\leftarrow \\text{identity}/\\text{inline}(B_3) \\\\\n\\text{unroll.body.k} &\\leftarrow \\text{clone}(\\text{L\\_body},\\ k=1,2,3,4) \\\\\n\\text{caller.cs1.entry} &\\leftarrow \\text{inline}(\\text{callee.entry},\\ \\text{cs1})\n\\end{aligned}\n$$",
+ "B005": "$$\n\\begin{aligned}\n\\text{inlined.B1} &: 80\\ \\text{samples} \\\\\n\\text{inlined.B2} &: 40\\ \\text{samples} \\\\\n\\text{inlined.B3} &: 20\\ \\text{samples} \\\\\n\\text{unroll.body.1} &: 25\\ \\text{samples} \\\\\n\\text{unroll.body.2} &: 30\\ \\text{samples} \\\\\n\\text{unroll.body.3} &: 20\\ \\text{samples} \\\\\n\\text{unroll.body.4} &: 25\\ \\text{samples}\n\\end{aligned}\n$$",
+ "B006": "- 采样率 $q = 1/1000$\n- 噪声 $\\sigma = \\sqrt{(\\text{sample} + 1)}$\n- unroll 覆盖 = 高",
+ "B007": "$$\n\\begin{aligned}\nB_1 &= 80000 \\\\\nB_2 &= 40000 \\\\\nB_3 &= 20000 \\\\\nL_{\\text{body}} &= 100000\n\\end{aligned}\n$$",
+ "B008": "$$\n25 + 30 + 20 + 25 = 100\n$$",
+ "B009": "$$\n\\alpha_1 = \\alpha_2 = \\alpha_3 = \\alpha_4 = 0.25\n$$",
+ "B010": "$$\n\\operatorname{expected}(\\text{unroll.body.k}) = q \\cdot \\alpha_k \\cdot L_{\\text{body}}\n$$",
+ "B011": "$$\n\\frac{100\\ \\text{samples}}{q} = 100000\n$$",
+ "B012": "$$\n4 \\cdot \\alpha \\cdot L_{\\text{body}} = 100000\n$$",
+ "B013": "$$\nL_{\\text{body}} = 100000\n$$",
+ "B014": "$$\n\\begin{aligned}\n\\operatorname{sum}(\\text{incoming } L_{\\text{body}}) &= \\operatorname{sum}(\\text{outgoing } L_{\\text{body}}) \\\\\n\\text{callee entry} &= \\operatorname{sum}(\\text{caller edge cs1})\n\\end{aligned}\n$$",
+ "B015": "$$\n\\frac{\\text{inline benefit}}{\\text{cost}} > \\text{threshold}\n$$",
+ "B016": "- callsite count $= 80000$\n- margin $= \\text{benefit}/\\text{cost} - \\text{threshold} = 0.12$\n- 标准差 $= 0.11$",
+ "B017": "$$\n\\frac{\\operatorname{count}(\\text{inlined.B3})}{\\operatorname{count}(\\text{inlined.B2})} > 0.8\n$$",
+ "B018": "- $B_3/B_2 = 0.5$\n- 置信区间 $[0.35,\\ 0.68]$",
+ "B019": "- 尽量保持原 counts $+$ 尽量把 margin 推到安全侧\n- subject to:\n  - caller/callee 流守恒\n  - counts 非负\n  - $\\|\\text{修正量}\\|_1 \\le \\text{budget}$",
+ "B020": "$$\n\\begin{aligned}\n\\text{decision\\_tag} &= \\text{risky-inline} \\\\\n\\text{policy} &= \\text{conservative threshold}\n\\end{aligned}\n$$",
+ "B021": "$$\nB_3 = 20000\n$$"
+}

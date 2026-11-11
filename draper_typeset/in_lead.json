@@ -1,0 +1,354 @@
+[
+ {
+  "id": "B023",
+  "lang": "text",
+  "open_line": 301,
+  "close_line": 303,
+  "text": "I = (S, F, B, R)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B024",
+  "lang": "text",
+  "open_line": 307,
+  "close_line": 309,
+  "text": "O = (x*, U, T, A)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B025",
+  "lang": "text",
+  "open_line": 322,
+  "close_line": 324,
+  "text": "H_t = (G, E, w, x_t, lambda_t, z_t, Sigma_t, D_t)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B026",
+  "lang": "text",
+  "open_line": 349,
+  "close_line": 355,
+  "text": "given observations  r in R+^|V_BIN|\nfind               x in R+^|V_IR|\nsuch that          x is flow-consistent on IR\nand                r is statistically explained by T(x)\nand                PGO predicates consumed from x are decision-stable",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B027",
+  "lang": "text",
+  "open_line": 359,
+  "close_line": 361,
+  "text": "z = T(lambda) x",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B028",
+  "lang": "text",
+  "open_line": 365,
+  "close_line": 372,
+  "text": "X = {\n      x | x >= 0,\n          C_CFG x = 0,\n          C_call x = 0,\n          C_loop x <= 0\n    }",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B029",
+  "lang": "text",
+  "open_line": 376,
+  "close_line": 381,
+  "text": "min_{x in X, lambda in Lambda}\n    L_sample(T(lambda)x, r)\n  + L_prior(x)\n  + L_transform(lambda)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B030",
+  "lang": "text",
+  "open_line": 397,
+  "close_line": 403,
+  "text": "source S, flags F, optimized binary B,\noptimization remarks Y,\npseudo-probe metadata M,\ndebug info L,\nFuncHash K",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B031",
+  "lang": "text",
+  "open_line": 416,
+  "close_line": 418,
+  "text": "TEG E = (V_IR, V_BIN, V_CTX, E_T)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B032",
+  "lang": "text",
+  "open_line": 424,
+  "close_line": 445,
+  "text": "template identity(i,j):\n    T[b_i, x_j]             <- 1\n\ntemplate clone(i,j,k):\n    T[b_i, x_j]             <- alpha_k\n\ntemplate merge(i,j1,j2):\n    T[b_i, x_j1]            <- 1\n    T[b_i, x_j2]            <- 1\n\ntemplate split(i,j):\n    T[b_i1, x_j]            <- lambda_i\n    T[b_i2, x_j]            <- 1-lambda_i\n\ntemplate loop-unroll(j,k):\n    for q = 1,...,k:\n        T[b_body_q, x_body] <- n_unroll\n\ntemplate inline(callee, callsite, ctx):\n    T[b_callee_entry(ctx), e_callsite] <- 1",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B033",
+  "lang": "text",
+  "open_line": 459,
+  "close_line": 464,
+  "text": "TEG E,\nsample records R,\nPMU event type,\nbranch/call stack availability",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B034",
+  "lang": "text",
+  "open_line": 478,
+  "close_line": 480,
+  "text": "Sigma_0 = diag(alpha_s + s_i + coverage_penalty_i)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B035",
+  "lang": "text",
+  "open_line": 486,
+  "close_line": 489,
+  "text": "x_0 <- argmin_{x in X}\n           ||x - profi(r, G)||_1",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B036",
+  "lang": "text",
+  "open_line": 493,
+  "close_line": 496,
+  "text": "x_0 <- argmin_{x in X}\n           KL(x || uniformPrior)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B037",
+  "lang": "text",
+  "open_line": 502,
+  "close_line": 504,
+  "text": "initial state (E, w, x_0, lambda_0, z_0, Sigma_0)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B038",
+  "lang": "text",
+  "open_line": 512,
+  "close_line": 517,
+  "text": "state after Phase 2,\nobservations s,\nsampling rates q,\nnoise scales sigma",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B039",
+  "lang": "text",
+  "open_line": 521,
+  "close_line": 532,
+  "text": "J(x, lambda)\n  = sum_i rho((s_i - q_i * A_i(lambda)x) / sigma_i)\n  + 0.5 * (x - mu_theta)^T Sigma_theta^-1 (x - mu_theta)\n  + beta * Omega(lambda)\n\nsubject to:\n    C_CFG x = 0\n    C_call x = 0\n    C_loop x <= 0\n    x >= 0",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B040",
+  "lang": "text",
+  "open_line": 538,
+  "close_line": 542,
+  "text": "L_sample(z, r)\n  = sum_i [ z_i - r_i log z_i\n            + alpha_i log(1 + z_i/alpha_i) ]",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B041",
+  "lang": "text",
+  "open_line": 546,
+  "close_line": 549,
+  "text": "L_sample(z, r)\n  = sum_i rho((q_i z_i - r_i)/sigma_i)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B042",
+  "lang": "text",
+  "open_line": 553,
+  "close_line": 556,
+  "text": "Omega(lambda)\n  = sum_{(i,j)} eta_ij * KL(lambda_i || pi_ij)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B043",
+  "lang": "text",
+  "open_line": 564,
+  "close_line": 566,
+  "text": "lambda_t+1 <- argmin_lambda J(lambda; x_t)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B044",
+  "lang": "text",
+  "open_line": 577,
+  "close_line": 582,
+  "text": "lambda <- Pi_Lambda(\n            lambda\n            - H_lambda^-1 grad_lambda J\n          )",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B045",
+  "lang": "text",
+  "open_line": 590,
+  "close_line": 599,
+  "text": "min_x sum_i rho((s_i-q_i z_i)/sigma_i)\n      + 0.5 * (x-mu_theta)^T Sigma_theta^-1 (x-mu_theta)\n\nsubject to:\n    C_CFG x = 0\n    C_call x = 0\n    C_loop x <= 0\n    x >= 0",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B046",
+  "lang": "text",
+  "open_line": 609,
+  "close_line": 611,
+  "text": "x_t+1 <- ProjectToFlowManifold(x_t+1)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B047",
+  "lang": "text",
+  "open_line": 615,
+  "close_line": 618,
+  "text": "ProjectToFlowManifold(y)\n  = argmin_{x in X} ||x-y||_D",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B048",
+  "lang": "text",
+  "open_line": 622,
+  "close_line": 624,
+  "text": "D_ii = 1/(1+r_i+coverage_i)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B049",
+  "lang": "text",
+  "open_line": 632,
+  "close_line": 634,
+  "text": "Sigma_t+1 = H^-1 + Sigma_prior + Sigma_mapping",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B050",
+  "lang": "text",
+  "open_line": 640,
+  "close_line": 645,
+  "text": "Sigma_ii =\n    sigma_i^2/(q_i^2 + delta)\n  + Sigma_prior_ii\n  + ambiguity_i * sigma_map^2",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B051",
+  "lang": "text",
+  "open_line": 653,
+  "close_line": 657,
+  "text": "|J_t - J_t+1| / max(1, |J_t|) < eta_obj\n|x_t+1 - x_t|_1 / max(1, |x_t|_1) < eta_x\nmax residual(C_CFG x, C_call x) < eta_flow",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B052",
+  "lang": "text",
+  "open_line": 661,
+  "close_line": 663,
+  "text": "(x_MAP, lambda_MAP, Sigma_MAP)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B053",
+  "lang": "text",
+  "open_line": 671,
+  "close_line": 675,
+  "text": "IR module,\ntarget LLVM pipeline P,\nMAP posterior (x_MAP, Sigma_MAP)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B054",
+  "lang": "text",
+  "open_line": 681,
+  "close_line": 689,
+  "text": "d = (\n  predicate function f_d,\n  threshold theta_d,\n  direction dir_d,\n  conservative fallback,\n  aggressive action\n)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B055",
+  "lang": "text",
+  "open_line": 693,
+  "close_line": 696,
+  "text": "y_d = f_d(x_MAP)\nvar(y_d) = grad f_d^T Sigma_MAP grad f_d",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B056",
+  "lang": "text",
+  "open_line": 700,
+  "close_line": 702,
+  "text": "var(y_d)=g_d^T Sigma_MAP g_d",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B057",
+  "lang": "text",
+  "open_line": 706,
+  "close_line": 710,
+  "text": "p_flip(d) =\n    P(y_d <= theta_d) if dir_d = greater\n    P(y_d >= theta_d) if dir_d = less",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B058",
+  "lang": "text",
+  "open_line": 714,
+  "close_line": 716,
+  "text": "risk(d)=c_d * p_flip(d)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B059",
+  "lang": "text",
+  "open_line": 722,
+  "close_line": 726,
+  "text": "margin_d(x) =\n    theta_d - f_d(x)      if dir_d = greater\n    f_d(x) - theta_d      if dir_d = less",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B060",
+  "lang": "text",
+  "open_line": 730,
+  "close_line": 733,
+  "text": "stable(d)  <=> margin_d(x_MAP) > k * sqrt(var(y_d))\nrisky(d)   <=> otherwise",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B061",
+  "lang": "text",
+  "open_line": 739,
+  "close_line": 741,
+  "text": "D_risk = { d | p_flip(d) >= tau_p and c_d >= tau_c }",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B062",
+  "lang": "text",
+  "open_line": 751,
+  "close_line": 756,
+  "text": "x_MAP,\nSigma_MAP,\nD_risk,\ncorrection budget epsilon",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B063",
+  "lang": "text",
+  "open_line": 760,
+  "close_line": 774,
+  "text": "min_delta_x\n    0.5 * (x_MAP + delta_x - mu_theta)^T\n          Sigma_theta^-1\n          (x_MAP + delta_x - mu_theta)\n  + gamma * sum_{d in D_risk} c_d *\n        max(0, margin_d(x_MAP + delta_x) + tau_safe)^2\n\nsubject to:\n    C_CFG (x_MAP + delta_x) = 0\n    C_call (x_MAP + delta_x) = 0\n    C_loop (x_MAP + delta_x) <= 0\n    x_MAP + delta_x >= 0\n    ||delta_x||_1 <= epsilon",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B064",
+  "lang": "text",
+  "open_line": 780,
+  "close_line": 783,
+  "text": "phi_d(x)\n  = max(0, margin_d(x) + tau_safe)^2",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B065",
+  "lang": "text",
+  "open_line": 789,
+  "close_line": 794,
+  "text": "x* = x_MAP + delta_x*\nU  = intervals derived from Sigma(x*)\nT  = decision stability tags\nA  = audit report",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B066",
+  "lang": "text",
+  "open_line": 798,
+  "close_line": 848,
+  "text": "Algorithm 1 DRAPER\n\nInput:\n    source S, flags F, binary B, samples R,\n    audit metadata (Y, M, L, K),\n    prior parameters theta,\n    thresholds eta_obj, eta_x, eta_flow,\n    confidence coefficient k,\n    safe margin tau_safe,\n    correction budget epsilon\n\nOutput:\n    flow-consistent profile x*,\n    uncertainty U,\n    decision tags T,\n    audit report A\n\n1:  (T0,Lambda,E_attr) <- BuildTEG(S,F,B,Y,M,L,K)\n2:  (q,sigma,x0,lambda0,Sigma0) <- AggregateAndInitialize(R,T0,E_attr)\n3:  x0 <- ProjectToFlowManifold(x0)\n4:  t <- 0\n5:  repeat\n6:      lambda_t+1 <- UpdateTransformRatios(\n                        x_t, lambda_t, T0, r, q, sigma, pi\n                    )\n7:      z_t+1 <- T(lambda_t+1) x_t\n8:      x_t+1 <- SolveConstrainedMAP(\n                  z_t+1, r, q, sigma, mu_theta, Sigma_theta\n               )\n9:      x_t+1 <- ProjectToFlowManifold(x_t+1)\n10:     Sigma_t+1 <- EstimateUncertainty(\n                      x_t+1, r, q, sigma, theta\n                   )\n11:     t <- t + 1\n12: until converged or t = T_max\n13: x_MAP <- x_t; lambda_MAP <- lambda_t; Sigma_MAP <- Sigma_t\n14: D <- ExtractPGOPredicates(P)\n15: D_risk <- SelectRiskyPredicates(\n               x_MAP, Sigma_MAP, D, k\n            )\n16: delta_x <- SolveBoundedRiskProjection(\n                x_MAP, mu_theta, Sigma_theta,\n                D_risk, tau_safe, epsilon\n             )\n17: x* <- ProjectToFlowManifold(x_MAP + delta_x)\n18: (U,T,A) <- EmitProfileAndAudit(\n                x*, Sigma_MAP, D, T0, E_attr\n             )\n19: return (x*,U,T,A)",
+  "hint": "CODE_KEEP"
+ }
+]

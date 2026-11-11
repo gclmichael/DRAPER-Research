@@ -1,0 +1,35 @@
+{
+  "programs": [
+    {
+      "program": "sqlite-modern",
+      "profi_count_error": 0.03211873015981644,
+      "final_count_error": 0.10847414518663868,
+      "timing_vs_profi": {
+        "speedup_percent": -2.187501403468357,
+        "ci95_percent": [
+          -3.784037518468829,
+          -1.00148071100402
+        ]
+      },
+      "count_improved_but_significantly_slower": false,
+      "final_change": 2773.578105314081,
+      "budget": 7380263.385123228,
+      "final_flow_audit": {
+        "cfg_max_absolute_residual": 0.3880786233081466,
+        "call_max_absolute_residual": 0.3880786233081466,
+        "minimum_count": 0.0
+      },
+      "maximum_measured_anchor_absolute_error": 0.0,
+      "projection_accepted": true,
+      "calibrated_interval_coverage": {
+        "coverage": 0.9469218783763804,
+        "positive_coverage": 0.6619924043236927,
+        "mean_width": null,
+        "count": 87927,
+        "unbounded_fraction": 0.00014784992095715765,
+        "finite_coverage": 0.9469140296198557
+      }
+    }
+  ],
+  "counterexamples": []
+}

@@ -1,0 +1,90 @@
+[
+ {
+  "id": "B103",
+  "lang": "text",
+  "open_line": 1486,
+  "close_line": 1548,
+  "text": "Algorithm DRAPER\n\nInput:\n    source S\n    compiler flags F\n    optimized binary B\n    sample records R\n    optional exact profiles L for training\n    optional calibration budget K\n\nOutput:\n    decision-safe IR profile P*\n    uncertainty intervals U\n    decision tags T\n    audit report A\n\nPhase 1: Evidence Construction\n    G_IR   <- compile S with audit pipeline\n    G_BIN  <- recover CFG from B\n    TEG    <- build transformation evidence graph\n    for each mapping edge:\n        attach evidence type, pass, confidence, ambiguity\n\nPhase 2: Runtime Evidence Aggregation\n    O      <- aggregate samples onto TEG\n    q      <- estimate sampling rates\n    sigma  <- estimate observation noise\n    a      <- compute mapping ambiguity\n\nPhase 3: Flow-Consistent MAP\n    x0     <- profi/MAP initialization\n    repeat until convergence:\n        update transform ratios lambda\n        update z = A(lambda) x\n        update graph prior mu, Sigma\n        solve constrained MAP\n        project x back to flow manifold\n\nPhase 4: Decision Risk Analysis\n    D      <- extract PGO predicates from LLVM\n    U      <- estimate posterior intervals\n    D_risk <- select predicates crossing thresholds\n    estimate flip probability and cost for each d in D_risk\n\nPhase 5: Risk Projection\n    delta  <- solve bounded risk projection\n    x*     <- project_to_flow_manifold(x + delta)\n    T      <- emit stable / risky / unknown tags\n\nPhase 6: Optional Sparse Calibration\n    C      <- select high-score anchors under budget K\n    if C is not empty:\n        rebuild sparse anchors C\n        rerun Phase 3 and Phase 5\n\nPhase 7: Audit\n    check CFG flow residual\n    check call graph residual\n    check interval coverage\n    check decision stability\n    emit P*, U, T, A",
+  "hint": "CODE_KEEP"
+ },
+ {
+  "id": "B104",
+  "lang": "text",
+  "open_line": 1566,
+  "close_line": 1577,
+  "text": "Evidence -> Solver -> Critic\n                        |\n                        v\n                  high-risk predicates\n                        |\n                        v\n                  Selector -> Solver\n                        |\n                        v\n                     Auditor",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B105",
+  "lang": "text",
+  "open_line": 1602,
+  "close_line": 1604,
+  "text": "P(block is hot | sampled evidence) >= 1 - alpha",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B106",
+  "lang": "text",
+  "open_line": 1612,
+  "close_line": 1614,
+  "text": "||delta_x||_1 <= budget",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B107",
+  "lang": "yaml",
+  "open_line": 1622,
+  "close_line": 1640,
+  "text": "flow_residual:\n  max_function: 0.00013\n  p99_function: 0.00004\ncall_residual:\n  max_context: 0.00021\ncoverage:\n  pseudo_probe: 87.2%\n  debug_info: 96.4%\n  cfg_hash: 91.0%\n  missing: 1.7%\nrisky_predicates:\n  inline: 23\n  layout: 41\n  branch: 18\nunknown_entities:\n  count: 102\n  examples: [...]",
+  "hint": "CODE_KEEP"
+ },
+ {
+  "id": "B108",
+  "lang": "bash",
+  "open_line": 1652,
+  "close_line": 1655,
+  "text": "opt -passes=draper-evidence \\\n    -draper-teg-output=teg.yaml",
+  "hint": "CODE_KEEP"
+ },
+ {
+  "id": "B109",
+  "lang": "yaml",
+  "open_line": 1667,
+  "close_line": 1679,
+  "text": "functions:\n  - id: main\n    hash: 0x7f21...\n    blocks:\n      - ir_bb: entry\n        binary_blocks: [0x4012f0]\n        evidence: pseudo-probe\n      - ir_bb: if.then\n        binary_blocks: [0x401310, 0x401390]\n        relation: clone\n        pass: jump-threading",
+  "hint": "CODE_KEEP"
+ },
+ {
+  "id": "B110",
+  "lang": "bash",
+  "open_line": 1685,
+  "close_line": 1691,
+  "text": "draper-solve \\\n  --teg teg.yaml \\\n  --samples perf.data \\\n  --out draper.prof \\\n  --risk-report risk.yaml",
+  "hint": "CODE_KEEP"
+ },
+ {
+  "id": "B111",
+  "lang": "text",
+  "open_line": 1704,
+  "close_line": 1708,
+  "text": "!draper.interval\n!draper.ambiguity\n!draper.decision_tag",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B112",
+  "lang": "text",
+  "open_line": 1869,
+  "close_line": 1896,
+  "text": "Build A: exact IR profile\n    clang -O3 -fprofile-instr-generate -fcoverage-mapping\n    run representative workload\n    llvm-profdata merge\n    save exact IR profile\n\nBuild B: sampled optimized binary\n    clang -O3\n    run same workload under perf/LBR or ARM SPE/ETM\n    save optimized binary and raw sample records\n\nBuild C: audit-only binary\n    clang -O3 with pseudo-probe metadata but no runtime counters\n    save pseudo-probe/hash evidence\n\nAlignment:\n    match source files, functions, IR CFG, binary CFG\n    record pass remarks and transformation evidence\n\nSplit:\n    train:\n        LLVM test-suite + AnghaBench + PolyBench\n    validation:\n        one real application family\n    test:\n        SPEC + large real apps, leave-program-out",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B113",
+  "lang": "text",
+  "open_line": 1960,
+  "close_line": 1965,
+  "text": "TEG\n+ flow-consistent posterior\n+ PGO decision risk projection\n+ sparse calibration",
+  "hint": "MATH?"
+ }
+]

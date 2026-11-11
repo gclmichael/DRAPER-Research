@@ -1,0 +1,247 @@
+{
+  "program": "sqlite-modern",
+  "method": "upstream arguments and files, fresh process per execution, wall time including launch",
+  "repetitions_per_batch": 1,
+  "seconds_per_execution": {
+    "baseline": [
+      0.3392209131270647,
+      0.3368398956954479,
+      0.3373550772666931,
+      0.3732693362981081,
+      0.33728984370827675,
+      0.3359072469174862,
+      0.33837406523525715,
+      0.34397345036268234,
+      0.33745436556637287,
+      0.33860024996101856,
+      0.33491961285471916,
+      0.33688079938292503,
+      0.3374189678579569,
+      0.336136881262064,
+      0.33755000680685043
+    ],
+    "profi": [
+      0.30015153251588345,
+      0.3036472871899605,
+      0.30393082462251186,
+      0.3014124948531389,
+      0.30121578462421894,
+      0.3024553991854191,
+      0.3004797212779522,
+      0.30142802372574806,
+      0.3021919820457697,
+      0.31782914511859417,
+      0.3074065111577511,
+      0.29988037794828415,
+      0.3012666516005993,
+      0.30636709555983543,
+      0.3006888162344694
+    ],
+    "calibrated": [
+      0.3045330364257097,
+      0.3033843543380499,
+      0.3036234714090824,
+      0.3051445782184601,
+      0.30335509590804577,
+      0.3055939916521311,
+      0.3023190777748823,
+      0.3078336473554373,
+      0.3038921784609556,
+      0.3047685790807009,
+      0.31469716504216194,
+      0.31640849635005,
+      0.3043086938560009,
+      0.30133846029639244,
+      0.3019307740032673
+    ],
+    "risk-projected": [
+      0.30346681363880634,
+      0.30357849411666393,
+      0.304689634591341,
+      0.31614922918379307,
+      0.3113991916179657,
+      0.30531752295792103,
+      0.3116471488028765,
+      0.3044507782906294,
+      0.3067103736102581,
+      0.33018867298960686,
+      0.31029096618294716,
+      0.33584257401525974,
+      0.3033398687839508,
+      0.30347163788974285,
+      0.30331379920244217
+    ]
+  },
+  "round_order": [
+    [
+      "calibrated",
+      "profi",
+      "risk-projected",
+      "baseline"
+    ],
+    [
+      "risk-projected",
+      "calibrated",
+      "baseline",
+      "profi"
+    ],
+    [
+      "profi",
+      "risk-projected",
+      "calibrated",
+      "baseline"
+    ],
+    [
+      "profi",
+      "calibrated",
+      "baseline",
+      "risk-projected"
+    ],
+    [
+      "profi",
+      "calibrated",
+      "risk-projected",
+      "baseline"
+    ],
+    [
+      "profi",
+      "risk-projected",
+      "calibrated",
+      "baseline"
+    ],
+    [
+      "calibrated",
+      "profi",
+      "baseline",
+      "risk-projected"
+    ],
+    [
+      "profi",
+      "risk-projected",
+      "baseline",
+      "calibrated"
+    ],
+    [
+      "baseline",
+      "calibrated",
+      "profi",
+      "risk-projected"
+    ],
+    [
+      "calibrated",
+      "risk-projected",
+      "baseline",
+      "profi"
+    ],
+    [
+      "calibrated",
+      "profi",
+      "risk-projected",
+      "baseline"
+    ],
+    [
+      "risk-projected",
+      "calibrated",
+      "profi",
+      "baseline"
+    ],
+    [
+      "risk-projected",
+      "profi",
+      "baseline",
+      "calibrated"
+    ],
+    [
+      "calibrated",
+      "risk-projected",
+      "profi",
+      "baseline"
+    ],
+    [
+      "baseline",
+      "profi",
+      "risk-projected",
+      "calibrated"
+    ]
+  ],
+  "comparisons": {
+    "baseline": {
+      "vs_baseline": {
+        "speedup_percent": 0.0,
+        "ci95_percent": [
+          0.0,
+          0.0
+        ]
+      },
+      "vs_profi": {
+        "speedup_percent": -10.777322568450524,
+        "ci95_percent": [
+          -12.320966950141004,
+          -9.519550881034068
+        ]
+      }
+    },
+    "profi": {
+      "vs_baseline": {
+        "speedup_percent": 12.079129296157642,
+        "ci95_percent": [
+          10.521113648007569,
+          14.052352679499384
+        ]
+      },
+      "vs_profi": {
+        "speedup_percent": 0.0,
+        "ci95_percent": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "calibrated": {
+      "vs_baseline": {
+        "speedup_percent": 11.27646750922987,
+        "ci95_percent": [
+          9.869114855465192,
+          13.103074664104994
+        ]
+      },
+      "vs_profi": {
+        "speedup_percent": -0.7161563370168713,
+        "ci95_percent": [
+          -1.709618089018895,
+          0.3005798569567351
+        ]
+      }
+    },
+    "risk-projected": {
+      "vs_baseline": {
+        "speedup_percent": 9.627396769809073,
+        "ci95_percent": [
+          7.442117213839575,
+          11.513980897820408
+        ]
+      },
+      "vs_profi": {
+        "speedup_percent": -2.187501403468357,
+        "ci95_percent": [
+          -3.784037518468829,
+          -1.00148071100402
+        ]
+      }
+    }
+  },
+  "reused_binaries": null,
+  "measured_representative": {
+    "baseline": "baseline",
+    "profi": "profi",
+    "calibrated": "calibrated",
+    "risk-projected": "risk-projected"
+  },
+  "independent_evaluation_input": true,
+  "binary_bytes": {
+    "baseline": 4460888,
+    "profi": 4497256,
+    "calibrated": 4525688,
+    "risk-projected": 4526856
+  }
+}
