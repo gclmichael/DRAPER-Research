@@ -1,0 +1,10 @@
+data/
+state/
+tmp/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.log
+*.tmp
+*.bak
+.DS_Store

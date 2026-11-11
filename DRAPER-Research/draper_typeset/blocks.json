@@ -1,0 +1,906 @@
+[
+ {
+  "id": "B001",
+  "lang": "text",
+  "open_line": 19,
+  "close_line": 21,
+  "text": "还原 counts 越接近真实执行 counts，PGO 效果越好。",
+  "hint": "QUOTE?"
+ },
+ {
+  "id": "B002",
+  "lang": "text",
+  "open_line": 37,
+  "close_line": 45,
+  "text": "传统目标:\n    minimize || inferred counts - true counts ||\n\nDRAPER 目标:\n    minimize expected decision loss\n      = sum over PGO predicates of\n            cost(flip predicate) * probability(flip predicate)",
+  "hint": "LIST?"
+ },
+ {
+  "id": "B003",
+  "lang": "text",
+  "open_line": 99,
+  "close_line": 119,
+  "text": "IR:\n    caller\n      cs1 -> callee\n    callee:\n      B1\n      B2\n      B3\n      loop:\n        L_body\n\nbinary:\n    caller:\n      inlined.B1\n      inlined.B2\n      inlined.B3\n      unroll.body.1\n      unroll.body.2\n      unroll.body.3\n      unroll.body.4",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B004",
+  "lang": "text",
+  "open_line": 125,
+  "close_line": 131,
+  "text": "inlined.B1          <- identity/inline(B1)\ninlined.B2          <- identity/inline(B2)\ninlined.B3          <- identity/inline(B3)\nunroll.body.k       <- clone(L_body, k=1,2,3,4)\ncaller.cs1.entry    <- inline(callee.entry, cs1)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B005",
+  "lang": "text",
+  "open_line": 139,
+  "close_line": 147,
+  "text": "inlined.B1          : 80 samples\ninlined.B2          : 40 samples\ninlined.B3          : 20 samples\nunroll.body.1       : 25 samples\nunroll.body.2       : 30 samples\nunroll.body.3       : 20 samples\nunroll.body.4       : 25 samples",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B006",
+  "lang": "text",
+  "open_line": 151,
+  "close_line": 155,
+  "text": "采样率 q    = 1/1000\n噪声 sigma  = sqrt(sample + 1)\nunroll 覆盖 = 高",
+  "hint": "LIST?"
+ },
+ {
+  "id": "B007",
+  "lang": "text",
+  "open_line": 159,
+  "close_line": 164,
+  "text": "B1      = 80000\nB2      = 40000\nB3      = 20000\nL_body  = 100000",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B008",
+  "lang": "text",
+  "open_line": 172,
+  "close_line": 174,
+  "text": "25 + 30 + 20 + 25 = 100",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B009",
+  "lang": "text",
+  "open_line": 178,
+  "close_line": 180,
+  "text": "alpha_1 = alpha_2 = alpha_3 = alpha_4 = 0.25",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B010",
+  "lang": "text",
+  "open_line": 184,
+  "close_line": 187,
+  "text": "expected(unroll.body.k)\n  = q * alpha_k * L_body",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B011",
+  "lang": "text",
+  "open_line": 191,
+  "close_line": 193,
+  "text": "100 samples / q = 100000",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B012",
+  "lang": "text",
+  "open_line": 197,
+  "close_line": 199,
+  "text": "4 * alpha * L_body = 100000",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B013",
+  "lang": "text",
+  "open_line": 203,
+  "close_line": 205,
+  "text": "L_body = 100000",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B014",
+  "lang": "text",
+  "open_line": 209,
+  "close_line": 212,
+  "text": "sum(incoming L_body) == sum(outgoing L_body)\ncallee entry == sum(caller edge cs1)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B015",
+  "lang": "text",
+  "open_line": 220,
+  "close_line": 222,
+  "text": "inline benefit / cost > threshold",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B016",
+  "lang": "text",
+  "open_line": 226,
+  "close_line": 230,
+  "text": "callsite count = 80000\nmargin = benefit/cost - threshold = 0.12\n标准差   = 0.11",
+  "hint": "LIST?"
+ },
+ {
+  "id": "B017",
+  "lang": "text",
+  "open_line": 236,
+  "close_line": 238,
+  "text": "count(inlined.B3) / count(inlined.B2) > 0.8",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B018",
+  "lang": "text",
+  "open_line": 242,
+  "close_line": 245,
+  "text": "B3/B2 = 0.5\n置信区间 [0.35, 0.68]",
+  "hint": "LIST?"
+ },
+ {
+  "id": "B019",
+  "lang": "text",
+  "open_line": 253,
+  "close_line": 260,
+  "text": "尽量保持原 counts\n+ 尽量把 margin 推到安全侧\nsubject to:\n    caller/callee 流守恒\n    counts 非负\n    ||修正量||_1 <= budget",
+  "hint": "LIST?"
+ },
+ {
+  "id": "B020",
+  "lang": "text",
+  "open_line": 264,
+  "close_line": 267,
+  "text": "decision_tag = risky-inline\npolicy       = conservative threshold",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B021",
+  "lang": "text",
+  "open_line": 271,
+  "close_line": 273,
+  "text": "B3 = 20000",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B022",
+  "lang": "yaml",
+  "open_line": 277,
+  "close_line": 291,
+  "text": "entity: callee.B3\ncount: 20000\ninterval: [15800, 24700]\nmapping: inlined-from-callee.B3\ndecision_tags:\n  layout: stable-cold\n\nentity: caller.cs1\ncount: 80000\ninterval: [71000, 89000]\ndecision_tags:\n  inline: risky-hot\n  policy: conservative",
+  "hint": "CODE_KEEP"
+ },
+ {
+  "id": "B023",
+  "lang": "text",
+  "open_line": 301,
+  "close_line": 303,
+  "text": "I = (S, F, B, R)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B024",
+  "lang": "text",
+  "open_line": 307,
+  "close_line": 309,
+  "text": "O = (x*, U, T, A)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B025",
+  "lang": "text",
+  "open_line": 322,
+  "close_line": 324,
+  "text": "H_t = (G, E, w, x_t, lambda_t, z_t, Sigma_t, D_t)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B026",
+  "lang": "text",
+  "open_line": 349,
+  "close_line": 355,
+  "text": "given observations  r in R+^|V_BIN|\nfind               x in R+^|V_IR|\nsuch that          x is flow-consistent on IR\nand                r is statistically explained by T(x)\nand                PGO predicates consumed from x are decision-stable",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B027",
+  "lang": "text",
+  "open_line": 359,
+  "close_line": 361,
+  "text": "z = T(lambda) x",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B028",
+  "lang": "text",
+  "open_line": 365,
+  "close_line": 372,
+  "text": "X = {\n      x | x >= 0,\n          C_CFG x = 0,\n          C_call x = 0,\n          C_loop x <= 0\n    }",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B029",
+  "lang": "text",
+  "open_line": 376,
+  "close_line": 381,
+  "text": "min_{x in X, lambda in Lambda}\n    L_sample(T(lambda)x, r)\n  + L_prior(x)\n  + L_transform(lambda)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B030",
+  "lang": "text",
+  "open_line": 397,
+  "close_line": 403,
+  "text": "source S, flags F, optimized binary B,\noptimization remarks Y,\npseudo-probe metadata M,\ndebug info L,\nFuncHash K",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B031",
+  "lang": "text",
+  "open_line": 416,
+  "close_line": 418,
+  "text": "TEG E = (V_IR, V_BIN, V_CTX, E_T)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B032",
+  "lang": "text",
+  "open_line": 424,
+  "close_line": 445,
+  "text": "template identity(i,j):\n    T[b_i, x_j]             <- 1\n\ntemplate clone(i,j,k):\n    T[b_i, x_j]             <- alpha_k\n\ntemplate merge(i,j1,j2):\n    T[b_i, x_j1]            <- 1\n    T[b_i, x_j2]            <- 1\n\ntemplate split(i,j):\n    T[b_i1, x_j]            <- lambda_i\n    T[b_i2, x_j]            <- 1-lambda_i\n\ntemplate loop-unroll(j,k):\n    for q = 1,...,k:\n        T[b_body_q, x_body] <- n_unroll\n\ntemplate inline(callee, callsite, ctx):\n    T[b_callee_entry(ctx), e_callsite] <- 1",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B033",
+  "lang": "text",
+  "open_line": 459,
+  "close_line": 464,
+  "text": "TEG E,\nsample records R,\nPMU event type,\nbranch/call stack availability",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B034",
+  "lang": "text",
+  "open_line": 478,
+  "close_line": 480,
+  "text": "Sigma_0 = diag(alpha_s + s_i + coverage_penalty_i)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B035",
+  "lang": "text",
+  "open_line": 486,
+  "close_line": 489,
+  "text": "x_0 <- argmin_{x in X}\n           ||x - profi(r, G)||_1",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B036",
+  "lang": "text",
+  "open_line": 493,
+  "close_line": 496,
+  "text": "x_0 <- argmin_{x in X}\n           KL(x || uniformPrior)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B037",
+  "lang": "text",
+  "open_line": 502,
+  "close_line": 504,
+  "text": "initial state (E, w, x_0, lambda_0, z_0, Sigma_0)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B038",
+  "lang": "text",
+  "open_line": 512,
+  "close_line": 517,
+  "text": "state after Phase 2,\nobservations s,\nsampling rates q,\nnoise scales sigma",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B039",
+  "lang": "text",
+  "open_line": 521,
+  "close_line": 532,
+  "text": "J(x, lambda)\n  = sum_i rho((s_i - q_i * A_i(lambda)x) / sigma_i)\n  + 0.5 * (x - mu_theta)^T Sigma_theta^-1 (x - mu_theta)\n  + beta * Omega(lambda)\n\nsubject to:\n    C_CFG x = 0\n    C_call x = 0\n    C_loop x <= 0\n    x >= 0",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B040",
+  "lang": "text",
+  "open_line": 538,
+  "close_line": 542,
+  "text": "L_sample(z, r)\n  = sum_i [ z_i - r_i log z_i\n            + alpha_i log(1 + z_i/alpha_i) ]",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B041",
+  "lang": "text",
+  "open_line": 546,
+  "close_line": 549,
+  "text": "L_sample(z, r)\n  = sum_i rho((q_i z_i - r_i)/sigma_i)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B042",
+  "lang": "text",
+  "open_line": 553,
+  "close_line": 556,
+  "text": "Omega(lambda)\n  = sum_{(i,j)} eta_ij * KL(lambda_i || pi_ij)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B043",
+  "lang": "text",
+  "open_line": 564,
+  "close_line": 566,
+  "text": "lambda_t+1 <- argmin_lambda J(lambda; x_t)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B044",
+  "lang": "text",
+  "open_line": 577,
+  "close_line": 582,
+  "text": "lambda <- Pi_Lambda(\n            lambda\n            - H_lambda^-1 grad_lambda J\n          )",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B045",
+  "lang": "text",
+  "open_line": 590,
+  "close_line": 599,
+  "text": "min_x sum_i rho((s_i-q_i z_i)/sigma_i)\n      + 0.5 * (x-mu_theta)^T Sigma_theta^-1 (x-mu_theta)\n\nsubject to:\n    C_CFG x = 0\n    C_call x = 0\n    C_loop x <= 0\n    x >= 0",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B046",
+  "lang": "text",
+  "open_line": 609,
+  "close_line": 611,
+  "text": "x_t+1 <- ProjectToFlowManifold(x_t+1)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B047",
+  "lang": "text",
+  "open_line": 615,
+  "close_line": 618,
+  "text": "ProjectToFlowManifold(y)\n  = argmin_{x in X} ||x-y||_D",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B048",
+  "lang": "text",
+  "open_line": 622,
+  "close_line": 624,
+  "text": "D_ii = 1/(1+r_i+coverage_i)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B049",
+  "lang": "text",
+  "open_line": 632,
+  "close_line": 634,
+  "text": "Sigma_t+1 = H^-1 + Sigma_prior + Sigma_mapping",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B050",
+  "lang": "text",
+  "open_line": 640,
+  "close_line": 645,
+  "text": "Sigma_ii =\n    sigma_i^2/(q_i^2 + delta)\n  + Sigma_prior_ii\n  + ambiguity_i * sigma_map^2",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B051",
+  "lang": "text",
+  "open_line": 653,
+  "close_line": 657,
+  "text": "|J_t - J_t+1| / max(1, |J_t|) < eta_obj\n|x_t+1 - x_t|_1 / max(1, |x_t|_1) < eta_x\nmax residual(C_CFG x, C_call x) < eta_flow",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B052",
+  "lang": "text",
+  "open_line": 661,
+  "close_line": 663,
+  "text": "(x_MAP, lambda_MAP, Sigma_MAP)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B053",
+  "lang": "text",
+  "open_line": 671,
+  "close_line": 675,
+  "text": "IR module,\ntarget LLVM pipeline P,\nMAP posterior (x_MAP, Sigma_MAP)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B054",
+  "lang": "text",
+  "open_line": 681,
+  "close_line": 689,
+  "text": "d = (\n  predicate function f_d,\n  threshold theta_d,\n  direction dir_d,\n  conservative fallback,\n  aggressive action\n)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B055",
+  "lang": "text",
+  "open_line": 693,
+  "close_line": 696,
+  "text": "y_d = f_d(x_MAP)\nvar(y_d) = grad f_d^T Sigma_MAP grad f_d",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B056",
+  "lang": "text",
+  "open_line": 700,
+  "close_line": 702,
+  "text": "var(y_d)=g_d^T Sigma_MAP g_d",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B057",
+  "lang": "text",
+  "open_line": 706,
+  "close_line": 710,
+  "text": "p_flip(d) =\n    P(y_d <= theta_d) if dir_d = greater\n    P(y_d >= theta_d) if dir_d = less",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B058",
+  "lang": "text",
+  "open_line": 714,
+  "close_line": 716,
+  "text": "risk(d)=c_d * p_flip(d)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B059",
+  "lang": "text",
+  "open_line": 722,
+  "close_line": 726,
+  "text": "margin_d(x) =\n    theta_d - f_d(x)      if dir_d = greater\n    f_d(x) - theta_d      if dir_d = less",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B060",
+  "lang": "text",
+  "open_line": 730,
+  "close_line": 733,
+  "text": "stable(d)  <=> margin_d(x_MAP) > k * sqrt(var(y_d))\nrisky(d)   <=> otherwise",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B061",
+  "lang": "text",
+  "open_line": 739,
+  "close_line": 741,
+  "text": "D_risk = { d | p_flip(d) >= tau_p and c_d >= tau_c }",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B062",
+  "lang": "text",
+  "open_line": 751,
+  "close_line": 756,
+  "text": "x_MAP,\nSigma_MAP,\nD_risk,\ncorrection budget epsilon",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B063",
+  "lang": "text",
+  "open_line": 760,
+  "close_line": 774,
+  "text": "min_delta_x\n    0.5 * (x_MAP + delta_x - mu_theta)^T\n          Sigma_theta^-1\n          (x_MAP + delta_x - mu_theta)\n  + gamma * sum_{d in D_risk} c_d *\n        max(0, margin_d(x_MAP + delta_x) + tau_safe)^2\n\nsubject to:\n    C_CFG (x_MAP + delta_x) = 0\n    C_call (x_MAP + delta_x) = 0\n    C_loop (x_MAP + delta_x) <= 0\n    x_MAP + delta_x >= 0\n    ||delta_x||_1 <= epsilon",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B064",
+  "lang": "text",
+  "open_line": 780,
+  "close_line": 783,
+  "text": "phi_d(x)\n  = max(0, margin_d(x) + tau_safe)^2",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B065",
+  "lang": "text",
+  "open_line": 789,
+  "close_line": 794,
+  "text": "x* = x_MAP + delta_x*\nU  = intervals derived from Sigma(x*)\nT  = decision stability tags\nA  = audit report",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B066",
+  "lang": "text",
+  "open_line": 798,
+  "close_line": 848,
+  "text": "Algorithm 1 DRAPER\n\nInput:\n    source S, flags F, binary B, samples R,\n    audit metadata (Y, M, L, K),\n    prior parameters theta,\n    thresholds eta_obj, eta_x, eta_flow,\n    confidence coefficient k,\n    safe margin tau_safe,\n    correction budget epsilon\n\nOutput:\n    flow-consistent profile x*,\n    uncertainty U,\n    decision tags T,\n    audit report A\n\n1:  (T0,Lambda,E_attr) <- BuildTEG(S,F,B,Y,M,L,K)\n2:  (q,sigma,x0,lambda0,Sigma0) <- AggregateAndInitialize(R,T0,E_attr)\n3:  x0 <- ProjectToFlowManifold(x0)\n4:  t <- 0\n5:  repeat\n6:      lambda_t+1 <- UpdateTransformRatios(\n                        x_t, lambda_t, T0, r, q, sigma, pi\n                    )\n7:      z_t+1 <- T(lambda_t+1) x_t\n8:      x_t+1 <- SolveConstrainedMAP(\n                  z_t+1, r, q, sigma, mu_theta, Sigma_theta\n               )\n9:      x_t+1 <- ProjectToFlowManifold(x_t+1)\n10:     Sigma_t+1 <- EstimateUncertainty(\n                      x_t+1, r, q, sigma, theta\n                   )\n11:     t <- t + 1\n12: until converged or t = T_max\n13: x_MAP <- x_t; lambda_MAP <- lambda_t; Sigma_MAP <- Sigma_t\n14: D <- ExtractPGOPredicates(P)\n15: D_risk <- SelectRiskyPredicates(\n               x_MAP, Sigma_MAP, D, k\n            )\n16: delta_x <- SolveBoundedRiskProjection(\n                x_MAP, mu_theta, Sigma_theta,\n                D_risk, tau_safe, epsilon\n             )\n17: x* <- ProjectToFlowManifold(x_MAP + delta_x)\n18: (U,T,A) <- EmitProfileAndAudit(\n                x*, Sigma_MAP, D, T0, E_attr\n             )\n19: return (x*,U,T,A)",
+  "hint": "CODE_KEEP"
+ },
+ {
+  "id": "B067",
+  "lang": "text",
+  "open_line": 856,
+  "close_line": 861,
+  "text": "n = |V_IR|\nm = |V_BIN|\np = |E_T|\nq = |D_risk|",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B068",
+  "lang": "text",
+  "open_line": 883,
+  "close_line": 885,
+  "text": "binary block b has sampled count s_b",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B069",
+  "lang": "text",
+  "open_line": 899,
+  "close_line": 901,
+  "text": "TEG = (V_IR, V_BIN, V_CTX, E_TRANSFORM)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B070",
+  "lang": "text",
+  "open_line": 907,
+  "close_line": 914,
+  "text": "IR function\nIR basic block\nIR CFG edge\nloop header / latch / exit\ncall site\nindirect-call target slot",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B071",
+  "lang": "text",
+  "open_line": 918,
+  "close_line": 925,
+  "text": "binary function\nbinary basic block\nbranch edge\ninlined clone\noutlined cold block\nspecialized version",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B072",
+  "lang": "text",
+  "open_line": 929,
+  "close_line": 934,
+  "text": "caller-context(caller, callsite, callee)\nrecursive context\nclone version\nspecialization version",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B073",
+  "lang": "yaml",
+  "open_line": 954,
+  "close_line": 964,
+  "text": "kind: inline\nsource_ir: callee.entry\ntarget_binary: caller.0x401310\npass: inliner\nconfidence: 0.94\nevidence:\n  - optimization-remark\n  - pseudo-probe\nambiguity: low",
+  "hint": "CODE_KEEP"
+ },
+ {
+  "id": "B074",
+  "lang": "text",
+  "open_line": 1001,
+  "close_line": 1010,
+  "text": "covered-by-pseudo-probe\ncovered-by-debug-info\ncovered-by-cfg-hash\ncovered-by-transitive-transform\nambiguous-many-to-one\nambiguous-one-to-many\nmissing\nstale-hash",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B075",
+  "lang": "text",
+  "open_line": 1022,
+  "close_line": 1030,
+  "text": "x = real counts on early IR entities\nz = expected counts on binary entities\ns = observed sampled counts\nlambda = unknown transform ratios\nq_i = effective sampling rate of entity i\nsigma_i = observation noise scale\na_i = mapping ambiguity score",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B076",
+  "lang": "text",
+  "open_line": 1034,
+  "close_line": 1036,
+  "text": "z = A(lambda) * x + epsilon_transform",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B077",
+  "lang": "text",
+  "open_line": 1044,
+  "close_line": 1046,
+  "text": "s_i ~ NegBin(q_i * z_i, alpha_i)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B078",
+  "lang": "text",
+  "open_line": 1052,
+  "close_line": 1056,
+  "text": "rho(r) =\n    0.5 * r^2                 if |r| <= delta\n    delta * |r| - delta^2 / 2 if |r| >  delta",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B079",
+  "lang": "text",
+  "open_line": 1068,
+  "close_line": 1070,
+  "text": "sum(incoming edge counts) = sum(outgoing edge counts)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B080",
+  "lang": "text",
+  "open_line": 1078,
+  "close_line": 1080,
+  "text": "entry(g, c) = sum(caller edge counts under context c)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B081",
+  "lang": "text",
+  "open_line": 1084,
+  "close_line": 1086,
+  "text": "entry(g) = sum(all caller edge counts)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B082",
+  "lang": "text",
+  "open_line": 1094,
+  "close_line": 1098,
+  "text": "header count >= latch count\nexit count <= header count\nsum(exit edge counts) <= header count",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B083",
+  "lang": "text",
+  "open_line": 1104,
+  "close_line": 1107,
+  "text": "x >= 0\n0 <= lambda <= 1",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B084",
+  "lang": "text",
+  "open_line": 1133,
+  "close_line": 1140,
+  "text": "GNN encoder over TEG\n  -> node embedding\n  -> predict prior mean mu\n  -> predict prior variance sigma\n  -> predict ambiguity a\n  -> predict transform ratio prior lambda",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B085",
+  "lang": "text",
+  "open_line": 1152,
+  "close_line": 1155,
+  "text": "GNN predicts prior and uncertainty\nMAP solver predicts flow-consistent profile",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B086",
+  "lang": "text",
+  "open_line": 1163,
+  "close_line": 1165,
+  "text": "(source, flags, exact IR profile, optimized binary, sampled profile)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B087",
+  "lang": "text",
+  "open_line": 1169,
+  "close_line": 1175,
+  "text": "L_prior =\n    L1(mu, true counts)\n  + gamma_1 * L_rank\n  + gamma_2 * L_threshold\n  + gamma_3 * L_decision",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B088",
+  "lang": "text",
+  "open_line": 1191,
+  "close_line": 1202,
+  "text": "minimize over x, lambda:\n    sum_i rho((s_i - q_i * z_i) / sigma_i)\n  + R_theta(x, lambda)\n\nsubject to:\n    z = A(lambda) * x\n    CFG flow conservation\n    call graph consistency\n    loop constraints\n    x >= 0",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B089",
+  "lang": "text",
+  "open_line": 1206,
+  "close_line": 1210,
+  "text": "R_theta =\n    0.5 * (x - mu)^T Sigma^-1 (x - mu)\n  + beta * Omega(lambda)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B090",
+  "lang": "text",
+  "open_line": 1236,
+  "close_line": 1241,
+  "text": "for each transform edge group:\n    fix x\n    solve small convex subproblem for lambda\n    update z",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B091",
+  "lang": "text",
+  "open_line": 1247,
+  "close_line": 1250,
+  "text": "min robust data loss + Gaussian prior\nsubject to CFG/call/loop constraints",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B092",
+  "lang": "text",
+  "open_line": 1263,
+  "close_line": 1265,
+  "text": "x <- project_to_flow_manifold(x)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B093",
+  "lang": "text",
+  "open_line": 1279,
+  "close_line": 1287,
+  "text": "d = (\n  predicate_function f_d,\n  threshold theta_d,\n  direction,\n  cost_false_positive,\n  cost_false_negative\n)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B094",
+  "lang": "text",
+  "open_line": 1311,
+  "close_line": 1313,
+  "text": "x ~ Normal(x*, Sigma_x)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B095",
+  "lang": "text",
+  "open_line": 1317,
+  "close_line": 1319,
+  "text": "y_d = f_d^T x",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B096",
+  "lang": "text",
+  "open_line": 1323,
+  "close_line": 1325,
+  "text": "y_d ~ Normal(f_d^T x*, f_d^T Sigma_x f_d)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B097",
+  "lang": "text",
+  "open_line": 1329,
+  "close_line": 1331,
+  "text": "p_flip = P(y_d <= theta)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B098",
+  "lang": "text",
+  "open_line": 1335,
+  "close_line": 1337,
+  "text": "p_flip = P(y_d >= theta)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B099",
+  "lang": "text",
+  "open_line": 1351,
+  "close_line": 1363,
+  "text": "minimize over delta_x:\n    0.5 * (x* + delta_x - mu)^T Sigma^-1\n          (x* + delta_x - mu)\n  + gamma * sum over risky d of\n        c_d * hinge_flip_d(x* + delta_x)\n\nsubject to:\n    CFG flow conservation still holds\n    call graph consistency still holds\n    x* + delta_x >= 0\n    ||delta_x||_1 <= budget",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B100",
+  "lang": "yaml",
+  "open_line": 1397,
+  "close_line": 1409,
+  "text": "block: bb17\ncount: 1032\nposterior_interval: [790, 1310]\nmapping_evidence: pseudo-probe + inline-context\nambiguity: low\nconsumed_by:\n  - inline\n  - code-layout\ndecision_tags:\n  inline: stable-hot\n  layout: risky-order",
+  "hint": "CODE_KEEP"
+ },
+ {
+  "id": "B101",
+  "lang": "text",
+  "open_line": 1445,
+  "close_line": 1451,
+  "text": "score(e) =\n    p_ambiguity(e)\n  * p_threshold_crossing(e)\n  * impact(e)\n  / (runtime_cost(e) + epsilon)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B102",
+  "lang": "text",
+  "open_line": 1473,
+  "close_line": 1478,
+  "text": "per function    <= K_f calibration anchors\nper loop        <= K_l calibration anchors\ndynamic instructions <= runtime budget\nprofile size         <= storage budget",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B103",
+  "lang": "text",
+  "open_line": 1486,
+  "close_line": 1548,
+  "text": "Algorithm DRAPER\n\nInput:\n    source S\n    compiler flags F\n    optimized binary B\n    sample records R\n    optional exact profiles L for training\n    optional calibration budget K\n\nOutput:\n    decision-safe IR profile P*\n    uncertainty intervals U\n    decision tags T\n    audit report A\n\nPhase 1: Evidence Construction\n    G_IR   <- compile S with audit pipeline\n    G_BIN  <- recover CFG from B\n    TEG    <- build transformation evidence graph\n    for each mapping edge:\n        attach evidence type, pass, confidence, ambiguity\n\nPhase 2: Runtime Evidence Aggregation\n    O      <- aggregate samples onto TEG\n    q      <- estimate sampling rates\n    sigma  <- estimate observation noise\n    a      <- compute mapping ambiguity\n\nPhase 3: Flow-Consistent MAP\n    x0     <- profi/MAP initialization\n    repeat until convergence:\n        update transform ratios lambda\n        update z = A(lambda) x\n        update graph prior mu, Sigma\n        solve constrained MAP\n        project x back to flow manifold\n\nPhase 4: Decision Risk Analysis\n    D      <- extract PGO predicates from LLVM\n    U      <- estimate posterior intervals\n    D_risk <- select predicates crossing thresholds\n    estimate flip probability and cost for each d in D_risk\n\nPhase 5: Risk Projection\n    delta  <- solve bounded risk projection\n    x*     <- project_to_flow_manifold(x + delta)\n    T      <- emit stable / risky / unknown tags\n\nPhase 6: Optional Sparse Calibration\n    C      <- select high-score anchors under budget K\n    if C is not empty:\n        rebuild sparse anchors C\n        rerun Phase 3 and Phase 5\n\nPhase 7: Audit\n    check CFG flow residual\n    check call graph residual\n    check interval coverage\n    check decision stability\n    emit P*, U, T, A",
+  "hint": "CODE_KEEP"
+ },
+ {
+  "id": "B104",
+  "lang": "text",
+  "open_line": 1566,
+  "close_line": 1577,
+  "text": "Evidence -> Solver -> Critic\n                        |\n                        v\n                  high-risk predicates\n                        |\n                        v\n                  Selector -> Solver\n                        |\n                        v\n                     Auditor",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B105",
+  "lang": "text",
+  "open_line": 1602,
+  "close_line": 1604,
+  "text": "P(block is hot | sampled evidence) >= 1 - alpha",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B106",
+  "lang": "text",
+  "open_line": 1612,
+  "close_line": 1614,
+  "text": "||delta_x||_1 <= budget",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B107",
+  "lang": "yaml",
+  "open_line": 1622,
+  "close_line": 1640,
+  "text": "flow_residual:\n  max_function: 0.00013\n  p99_function: 0.00004\ncall_residual:\n  max_context: 0.00021\ncoverage:\n  pseudo_probe: 87.2%\n  debug_info: 96.4%\n  cfg_hash: 91.0%\n  missing: 1.7%\nrisky_predicates:\n  inline: 23\n  layout: 41\n  branch: 18\nunknown_entities:\n  count: 102\n  examples: [...]",
+  "hint": "CODE_KEEP"
+ },
+ {
+  "id": "B108",
+  "lang": "bash",
+  "open_line": 1652,
+  "close_line": 1655,
+  "text": "opt -passes=draper-evidence \\\n    -draper-teg-output=teg.yaml",
+  "hint": "CODE_KEEP"
+ },
+ {
+  "id": "B109",
+  "lang": "yaml",
+  "open_line": 1667,
+  "close_line": 1679,
+  "text": "functions:\n  - id: main\n    hash: 0x7f21...\n    blocks:\n      - ir_bb: entry\n        binary_blocks: [0x4012f0]\n        evidence: pseudo-probe\n      - ir_bb: if.then\n        binary_blocks: [0x401310, 0x401390]\n        relation: clone\n        pass: jump-threading",
+  "hint": "CODE_KEEP"
+ },
+ {
+  "id": "B110",
+  "lang": "bash",
+  "open_line": 1685,
+  "close_line": 1691,
+  "text": "draper-solve \\\n  --teg teg.yaml \\\n  --samples perf.data \\\n  --out draper.prof \\\n  --risk-report risk.yaml",
+  "hint": "CODE_KEEP"
+ },
+ {
+  "id": "B111",
+  "lang": "text",
+  "open_line": 1704,
+  "close_line": 1708,
+  "text": "!draper.interval\n!draper.ambiguity\n!draper.decision_tag",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B112",
+  "lang": "text",
+  "open_line": 1869,
+  "close_line": 1896,
+  "text": "Build A: exact IR profile\n    clang -O3 -fprofile-instr-generate -fcoverage-mapping\n    run representative workload\n    llvm-profdata merge\n    save exact IR profile\n\nBuild B: sampled optimized binary\n    clang -O3\n    run same workload under perf/LBR or ARM SPE/ETM\n    save optimized binary and raw sample records\n\nBuild C: audit-only binary\n    clang -O3 with pseudo-probe metadata but no runtime counters\n    save pseudo-probe/hash evidence\n\nAlignment:\n    match source files, functions, IR CFG, binary CFG\n    record pass remarks and transformation evidence\n\nSplit:\n    train:\n        LLVM test-suite + AnghaBench + PolyBench\n    validation:\n        one real application family\n    test:\n        SPEC + large real apps, leave-program-out",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B113",
+  "lang": "text",
+  "open_line": 1960,
+  "close_line": 1965,
+  "text": "TEG\n+ flow-consistent posterior\n+ PGO decision risk projection\n+ sparse calibration",
+  "hint": "MATH?"
+ }
+]

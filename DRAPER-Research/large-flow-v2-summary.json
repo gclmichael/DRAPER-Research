@@ -1,0 +1,38 @@
+{
+  "status": "complete",
+  "programs": [
+    {
+      "program": "spiff",
+      "execution": {
+        "arguments": [
+          "Sample.3",
+          "Sample.4"
+        ],
+        "cwd": "/data/chaoni/chengli/draper-node3/data/large-flow-v2/spiff/workload",
+        "reference": "/data/chaoni/chengli/draper-node3/data/large-flow-v2/spiff/workload/spiff.reference_output",
+        "verifier": "/data/chaoni/chengli/draper-node3/data/industrial-corpus-v1/native/tools/fpcmp-target",
+        "expected_exit": 1,
+        "append_exit": true
+      },
+      "source_lines": 4749,
+      "blocks": 1471,
+      "edges": 2057,
+      "functions": 99,
+      "exact_audit": {
+        "cfg_max_absolute_residual": 0.0,
+        "call_max_absolute_residual": 0.0,
+        "minimum_count": 0.0
+      },
+      "solver": {
+        "cfg_max_absolute_residual": 0.0056891427375376225,
+        "call_max_absolute_residual": 1.1641532182693481e-10,
+        "minimum_count": 0.0,
+        "iterations": 2393,
+        "projection_l1_normalized": 1.1337073743032219e-05,
+        "regularization": 1e-06,
+        "anchors": 0
+      },
+      "counts_repeat_equal": true
+    }
+  ]
+}

@@ -1,0 +1,290 @@
+[
+ {
+  "id": "B067",
+  "lang": "text",
+  "open_line": 856,
+  "close_line": 861,
+  "text": "n = |V_IR|\nm = |V_BIN|\np = |E_T|\nq = |D_risk|",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B068",
+  "lang": "text",
+  "open_line": 883,
+  "close_line": 885,
+  "text": "binary block b has sampled count s_b",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B069",
+  "lang": "text",
+  "open_line": 899,
+  "close_line": 901,
+  "text": "TEG = (V_IR, V_BIN, V_CTX, E_TRANSFORM)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B070",
+  "lang": "text",
+  "open_line": 907,
+  "close_line": 914,
+  "text": "IR function\nIR basic block\nIR CFG edge\nloop header / latch / exit\ncall site\nindirect-call target slot",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B071",
+  "lang": "text",
+  "open_line": 918,
+  "close_line": 925,
+  "text": "binary function\nbinary basic block\nbranch edge\ninlined clone\noutlined cold block\nspecialized version",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B072",
+  "lang": "text",
+  "open_line": 929,
+  "close_line": 934,
+  "text": "caller-context(caller, callsite, callee)\nrecursive context\nclone version\nspecialization version",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B073",
+  "lang": "yaml",
+  "open_line": 954,
+  "close_line": 964,
+  "text": "kind: inline\nsource_ir: callee.entry\ntarget_binary: caller.0x401310\npass: inliner\nconfidence: 0.94\nevidence:\n  - optimization-remark\n  - pseudo-probe\nambiguity: low",
+  "hint": "CODE_KEEP"
+ },
+ {
+  "id": "B074",
+  "lang": "text",
+  "open_line": 1001,
+  "close_line": 1010,
+  "text": "covered-by-pseudo-probe\ncovered-by-debug-info\ncovered-by-cfg-hash\ncovered-by-transitive-transform\nambiguous-many-to-one\nambiguous-one-to-many\nmissing\nstale-hash",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B075",
+  "lang": "text",
+  "open_line": 1022,
+  "close_line": 1030,
+  "text": "x = real counts on early IR entities\nz = expected counts on binary entities\ns = observed sampled counts\nlambda = unknown transform ratios\nq_i = effective sampling rate of entity i\nsigma_i = observation noise scale\na_i = mapping ambiguity score",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B076",
+  "lang": "text",
+  "open_line": 1034,
+  "close_line": 1036,
+  "text": "z = A(lambda) * x + epsilon_transform",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B077",
+  "lang": "text",
+  "open_line": 1044,
+  "close_line": 1046,
+  "text": "s_i ~ NegBin(q_i * z_i, alpha_i)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B078",
+  "lang": "text",
+  "open_line": 1052,
+  "close_line": 1056,
+  "text": "rho(r) =\n    0.5 * r^2                 if |r| <= delta\n    delta * |r| - delta^2 / 2 if |r| >  delta",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B079",
+  "lang": "text",
+  "open_line": 1068,
+  "close_line": 1070,
+  "text": "sum(incoming edge counts) = sum(outgoing edge counts)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B080",
+  "lang": "text",
+  "open_line": 1078,
+  "close_line": 1080,
+  "text": "entry(g, c) = sum(caller edge counts under context c)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B081",
+  "lang": "text",
+  "open_line": 1084,
+  "close_line": 1086,
+  "text": "entry(g) = sum(all caller edge counts)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B082",
+  "lang": "text",
+  "open_line": 1094,
+  "close_line": 1098,
+  "text": "header count >= latch count\nexit count <= header count\nsum(exit edge counts) <= header count",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B083",
+  "lang": "text",
+  "open_line": 1104,
+  "close_line": 1107,
+  "text": "x >= 0\n0 <= lambda <= 1",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B084",
+  "lang": "text",
+  "open_line": 1133,
+  "close_line": 1140,
+  "text": "GNN encoder over TEG\n  -> node embedding\n  -> predict prior mean mu\n  -> predict prior variance sigma\n  -> predict ambiguity a\n  -> predict transform ratio prior lambda",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B085",
+  "lang": "text",
+  "open_line": 1152,
+  "close_line": 1155,
+  "text": "GNN predicts prior and uncertainty\nMAP solver predicts flow-consistent profile",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B086",
+  "lang": "text",
+  "open_line": 1163,
+  "close_line": 1165,
+  "text": "(source, flags, exact IR profile, optimized binary, sampled profile)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B087",
+  "lang": "text",
+  "open_line": 1169,
+  "close_line": 1175,
+  "text": "L_prior =\n    L1(mu, true counts)\n  + gamma_1 * L_rank\n  + gamma_2 * L_threshold\n  + gamma_3 * L_decision",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B088",
+  "lang": "text",
+  "open_line": 1191,
+  "close_line": 1202,
+  "text": "minimize over x, lambda:\n    sum_i rho((s_i - q_i * z_i) / sigma_i)\n  + R_theta(x, lambda)\n\nsubject to:\n    z = A(lambda) * x\n    CFG flow conservation\n    call graph consistency\n    loop constraints\n    x >= 0",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B089",
+  "lang": "text",
+  "open_line": 1206,
+  "close_line": 1210,
+  "text": "R_theta =\n    0.5 * (x - mu)^T Sigma^-1 (x - mu)\n  + beta * Omega(lambda)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B090",
+  "lang": "text",
+  "open_line": 1236,
+  "close_line": 1241,
+  "text": "for each transform edge group:\n    fix x\n    solve small convex subproblem for lambda\n    update z",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B091",
+  "lang": "text",
+  "open_line": 1247,
+  "close_line": 1250,
+  "text": "min robust data loss + Gaussian prior\nsubject to CFG/call/loop constraints",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B092",
+  "lang": "text",
+  "open_line": 1263,
+  "close_line": 1265,
+  "text": "x <- project_to_flow_manifold(x)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B093",
+  "lang": "text",
+  "open_line": 1279,
+  "close_line": 1287,
+  "text": "d = (\n  predicate_function f_d,\n  threshold theta_d,\n  direction,\n  cost_false_positive,\n  cost_false_negative\n)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B094",
+  "lang": "text",
+  "open_line": 1311,
+  "close_line": 1313,
+  "text": "x ~ Normal(x*, Sigma_x)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B095",
+  "lang": "text",
+  "open_line": 1317,
+  "close_line": 1319,
+  "text": "y_d = f_d^T x",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B096",
+  "lang": "text",
+  "open_line": 1323,
+  "close_line": 1325,
+  "text": "y_d ~ Normal(f_d^T x*, f_d^T Sigma_x f_d)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B097",
+  "lang": "text",
+  "open_line": 1329,
+  "close_line": 1331,
+  "text": "p_flip = P(y_d <= theta)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B098",
+  "lang": "text",
+  "open_line": 1335,
+  "close_line": 1337,
+  "text": "p_flip = P(y_d >= theta)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B099",
+  "lang": "text",
+  "open_line": 1351,
+  "close_line": 1363,
+  "text": "minimize over delta_x:\n    0.5 * (x* + delta_x - mu)^T Sigma^-1\n          (x* + delta_x - mu)\n  + gamma * sum over risky d of\n        c_d * hinge_flip_d(x* + delta_x)\n\nsubject to:\n    CFG flow conservation still holds\n    call graph consistency still holds\n    x* + delta_x >= 0\n    ||delta_x||_1 <= budget",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B100",
+  "lang": "yaml",
+  "open_line": 1397,
+  "close_line": 1409,
+  "text": "block: bb17\ncount: 1032\nposterior_interval: [790, 1310]\nmapping_evidence: pseudo-probe + inline-context\nambiguity: low\nconsumed_by:\n  - inline\n  - code-layout\ndecision_tags:\n  inline: stable-hot\n  layout: risky-order",
+  "hint": "CODE_KEEP"
+ },
+ {
+  "id": "B101",
+  "lang": "text",
+  "open_line": 1445,
+  "close_line": 1451,
+  "text": "score(e) =\n    p_ambiguity(e)\n  * p_threshold_crossing(e)\n  * impact(e)\n  / (runtime_cost(e) + epsilon)",
+  "hint": "MATH?"
+ },
+ {
+  "id": "B102",
+  "lang": "text",
+  "open_line": 1473,
+  "close_line": 1478,
+  "text": "per function    <= K_f calibration anchors\nper loop        <= K_l calibration anchors\ndynamic instructions <= runtime budget\nprofile size         <= storage budget",
+  "hint": "MATH?"
+ }
+]
