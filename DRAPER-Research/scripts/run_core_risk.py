@@ -23,7 +23,8 @@ from draper.transformed import infer as infer_transformed,intervals as transform
 
 
 def machine_order(text, system):
-    """只读取保留早期块名的机器基本块；优化生成或合并后无法唯一对应的块跳过。"""
+    """提取机器基本块的布局顺序，用于检测分支布局是否符合控制流线性化预期。
+    只读取保留早期块名的机器基本块；优化生成或合并后无法唯一对应的块跳过。"""
     layouts={};conditional={}; function=None; body=False;current=None
     for line in text.splitlines():
         match=re.match(r'^name:\s+[\'"]?([^\s\'"]+)',line)

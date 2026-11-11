@@ -53,6 +53,8 @@ class FlowSystem:
         self.block_count = block_count
 
     def vector(self, profile):
+        """将原始 Profile 字典转换为 LP 求解器所需的稀疏计数向量。
+        检查图 ID 与函数顺序一致性，确保数据有效性。"""
         if profile["ir_id"] != self.graph["ir_id"]:
             raise ValueError("Profile and graph refer to different IR")
         if [entry["name"] for entry in profile["functions"]] != [entry["name"] for entry in self.functions]:
@@ -66,6 +68,8 @@ class FlowSystem:
         return result
 
     def profile(self, edges, kind):
+        """将优化的计数向量反序列化回 Profile 格式。
+        计算基本块计数以完整表达程序运行特征。"""
         blocks = self.blocks @ edges
         functions = []
         for function, edge_offset, block_offset in zip(self.functions, self.edge_offsets, self.block_offsets):
@@ -75,6 +79,7 @@ class FlowSystem:
         return {"ir_id": self.graph["ir_id"], "kind": kind, "functions": functions}
 
     def audit(self, edges):
+        """计算残差与指标，用于检查流守恒和调用图约束满足度。"""
         return {"cfg_max_absolute_residual": float(np.max(np.abs(self.cfg @ edges), initial=0)),
                 "call_max_absolute_residual": float(np.max(np.abs(self.calls @ edges), initial=0)),
                 "minimum_count": float(np.min(edges, initial=0))}
